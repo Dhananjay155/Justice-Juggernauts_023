@@ -1,6 +1,17 @@
+
+/* import font style */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+
+
+
 /* body code and head this is top*/
 *{
-    background-color: black;
+    /* background-color: black; */
     margin: 0;
     padding: 0;
 }
@@ -14,21 +25,62 @@ a{
 li{
     list-style: none;
 }
-
-/* import font style */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-
-
+body{
+    position: relative;
+    height: 100%;
+    font-size: 14px;
+    color: #eee;
+    background-color: black;
+    overflow: hidden;
+}
+/* header */
+.header{
+    width: 93%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 40px;
+    z-index: 1000;
+}
 
 
 /* nav stlye will be here  */
+
+nav ul{
+    display:flex ;
+    gap: 30px;
+
+}
+nav ul li a{
+    color: #eee;
+    text-transform: capitalize;
+    font-size: 12px;
+    letter-spacing: .4px;
+
+}
+nav li{
+    font-size: 16px;
+}
+a:hover{
+    color: var(--primary);
+} 
+.logo img{
+    height: 50px;
+}
+/* seaching and api */
+#movie-src{
+    padding-top: 100px;
+}
 
 /* start hiren code */
 .container {
     max-width: 1350px;
     margin: auto;
+    /* margin-top: 100px; */
+
     font-family: Arial, sans-serif;
     padding: 20px;
     background-color: #f2f2f2;
@@ -37,6 +89,7 @@ li{
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    /* margin-top: 400px; */
     
 }
 #searchBox {

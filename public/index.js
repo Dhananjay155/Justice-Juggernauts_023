@@ -108,4 +108,7 @@ const searchBox = document.getElementById("searchBox");
             fetchMovies(); // Fetch default movies
         });
 
-        //end hiren code 
+
+//end hiren code 
+
+
