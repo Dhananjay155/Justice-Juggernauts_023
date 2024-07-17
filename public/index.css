@@ -1,0 +1,106 @@
+/* body code and head this is top*/
+*{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --primary: #a63399;
+    --secondary: #e66b70;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+/* nav stlye will be here  */
+
+/* start hiren code */
+.container {
+    max-width: 1350px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+#searchContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+#searchBox {
+    padding: 10px;
+    width: 100%;
+    margin-right: 10px;
+}
+#clearButton {
+    padding: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.card {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.card button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.card button:hover {
+    background-color: #0056b3;
+}
+#pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+#pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#pagination button:hover {
+    background-color: #0056b3;
+}
+#pagination span {
+    margin: 0 10px;
+}
+@media (max-width: 768px) {
+    #container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    #container {
+        grid-template-columns: 1fr;
+    }
+}
+/* end hiren code */
