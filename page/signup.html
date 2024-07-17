@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+    body {
+        background: url("https://c4.wallpaperflare.com/wallpaper/22/762/507/film-movie-filmmaker-movie-director-wallpaper-preview.jpg") no-repeat center center fixed;
+        background-size: cover;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .container {
+      max-width: 450px;
+      border-radius: 40px;
+      padding: 25px 35px;
+      box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+      margin: 20px;
+      background-color: white;
+    }
+
+    #maincontainer {
+      max-width: 450px;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+
+    .heading {
+      text-align: center;
+      font-weight: 900;
+      font-size: 30px;
+      color: black;
+    }
+
+    .form {
+      margin-top: 20px;
+    }
+
+    .form .input {
+      width: 90%;
+      background: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 20px;
+      margin-top: 15px;
+      box-shadow: #080c0e 0px 10px 10px -5px;
+      border-inline: 2px solid transparent;
+    }
+
+    .form .login-button {
+      display: block;
+      width: 100%;
+      font-weight: bold;
+      background: orange;
+      color: white;
+      padding-block: 15px;
+      margin: 20px auto;
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.878) 0px 20px 10px -15px;
+      border: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .form .login-button:hover {
+      transform: scale(1.03);
+      box-shadow: rgba(0, 0, 0, 0.878) 0px 23px 10px -20px;
+    }
+
+    .form .login-button:active {
+      transform: scale(0.95);
+      box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+
+    <div id="maincontainer">
+        <div class="container">
+            <div class="heading">Sign Up</div>
+            <form class="form">
+                <input required="" class="input" type="text" name="" id="" placeholder="Username">
+                <input required="" class="input" type="email" name="password" id="password" placeholder="Email">
+                <input class="input" type="number" placeholder="Phone Number" value="" required>
+                <input class="input" type="password" placeholder="Password" value="" required>
+                <input id="log" class="login-button" type="submit" value="Sign Up">
+            </form>
+
+        </div>
+    </div>
+</body>
+
+<script>
+
+  let submitForm = document.querySelector("form")
+  let loginBtnp = document.getElementById("loginppp-btn")
+
+  let handleLoginPage = ()=>{
+    window.location.href = "loginpage.html"
+  }
+
+  loginBtnp.addEventListener("click", handleLoginPage)
+
+  let handleSubmit = (event) => {
+    event.preventDefault()
+    let id = Math.random().toString()
+    let obj = {
+      id,
+      username: event.target[0].value,
+      useremail: event.target[1].value,
+      number: event.target[2].value,
+      password: event.target[3].value
+    }
+    fetch("http://localhost:3000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(obj)
+    }).then((res) => {
+      window.location.href = "loginpage.html"
+    })
+  }
+
+  submitForm.addEventListener("submit", (event) => handleSubmit(event))
+
+</script>
+
+</html>
