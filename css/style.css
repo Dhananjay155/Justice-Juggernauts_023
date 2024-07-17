@@ -1,0 +1,288 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition: background 0.1s, color 0.1s;
+}
+
+body.light-mode {
+    background: linear-gradient(to right, #66c2ff, #2980b9);
+    color: black;
+}
+
+body.dark-mode {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    color: white;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tickets {
+    width: 550px;
+    height: fit-content;
+    border-radius: 8px;
+    padding: 16px;
+    background: white;
+    box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: background 0.1s, color 0.1s;
+}
+
+body.dark-mode .tickets {
+    background: #333;
+    color: white;
+}
+
+.ticket-selector {
+    background: rgb(243, 243, 243);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 8px;
+    transition: background 0.1s, color 0.1s;
+}
+
+body.dark-mode .ticket-selector {
+    background: #444;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.seats {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.status {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.item {
+    font-size: 14px;
+    position: relative;
+}
+
+.item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -14px;
+    transform: translate(0, -50%);
+    width: 10px;
+    height: 10px;
+    background: rgb(255, 255, 255);
+    outline: 1px solid rgb(120, 120, 120);
+    border-radius: 1px;
+}
+
+.item:nth-child(2)::before {
+    background-color:red;
+    outline: none;
+}
+
+.item:nth-child(3)::before {
+    background: #47a3ff;
+    outline: none;
+}
+
+.all-seats {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 15px;
+    margin: 60px 0;
+    margin-top: 20px;
+    position: relative;
+}
+
+.seat {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 1px;
+    outline: 1px solid rgb(180, 180, 180);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.seat:hover {
+    transform: scale(1.1);
+}
+
+.all-seats input:checked+label {
+    background: #47a3ff;
+    outline: none;
+}
+
+.seat.booked {
+    background-color:red;
+    outline: none;
+}
+
+input {
+    display: none;
+}
+
+.seats::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 300px;
+    height: 7px;
+    background: rgb(141, 198, 255);
+    border-radius: 0 0 3px 3px;
+    border-top: 1px solid rgb(180, 180, 180);
+}
+
+.screentext {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.timings {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.dates {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dates-item {
+    width: 50px;
+    height: 50px;
+    background: rgb(175, 174, 174);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.dates-item:hover {
+    transform: scale(1.1);
+}
+
+.day {
+    font-size: 12px;
+}
+
+.times {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.time {
+    width: fit-content;
+    padding: 7px 14px;
+    background: rgb(175, 174, 174);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.time:hover {
+    transform: scale(1.1);
+}
+
+.timings input:checked+label {
+    background: #47a3ff;
+    color: white;
+}
+
+.price {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.total div {
+    display: flex;
+    gap: 4px;
+}
+
+.total span {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.price button {
+    background-color:red;
+    color: white;
+    font-size: 14px;
+    padding: 15px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.price button:hover {
+    background-color:green;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#theme-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.light-mode #theme-button {
+    background: black;
+    color: white;
+}
+
+body.dark-mode #theme-button {
+    background: white;
+    color: black;
+}
