@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signup</title>
+  <title>Login</title>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
 
@@ -77,6 +77,20 @@
       transform: scale(0.95);
       box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
     }
+
+    .form .forgot-password {
+      display: block;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    #signup-btn {
+      cursor: pointer;
+    }
+
+    #log {
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -84,44 +98,59 @@
 
   <div id="maincontainer">
     <div class="container">
-      <div class="heading">Sign Up</div>
-      <form class="form">
-        <input required class="input" type="text" placeholder="Username">
-        <input required class="input" type="email" placeholder="Email">
-        <input required class="input" type="number" placeholder="Phone Number">
-        <input required class="input" type="password" placeholder="Password">
-        <input class="login-button" type="submit" value="Sign Up">
+      <div class="heading">Login</div>
+      <form class="form" id="login-form">
+        <input required="" class="input" type="text" name="email" id="email" placeholder="Username">
+        <input required="" class="input" type="password" name="password" id="password" placeholder="Password">
+        <span class="forgot-password"><a href="#" id="forgot-password">Forgot Password?</a></span>
+        <input id="log" class="login-button" type="submit" value="Login">
       </form>
     </div>
   </div>
 
   <script>
-    let submitForm = document.querySelector("form");
+    let loginForm = document.getElementById("login-form");
+    let forgotPasswordBtn = document.getElementById("forgot-password");
+
+    forgotPasswordBtn.addEventListener("click", () => {
+      let email = prompt("Please enter your email:");
+      if (email) {
+        fetch(`http://localhost:3000/users?email=${email}`)
+          .then(response => response.json())
+          .then(users => {
+            if (users.length > 0) {
+              let user = users[0];
+              alert(`Your password is: ${user.password}`);
+            } else {
+              alert("Email not found!");
+            }
+          });
+      }
+    });
 
     let handleSubmit = async (event) => {
       event.preventDefault();
-      let id = Math.random().toString();
-      let obj = {
-        id,
-        username: event.target[0].value,
-        email: event.target[1].value,
-        number: event.target[2].value,
-        password: event.target[3].value
-      };
-
-      await fetch("http://localhost:3000/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(obj)
+      let userName = event.target[0].value;
+      let passWord = event.target[1].value;
+      let URL = "http://localhost:3000/users";
+      let res = await fetch(URL);
+      let users = await res.json();
+      let loggedUser = users.filter((ele) => {
+        return ele.username == userName && ele.password == passWord;
       });
-
-      window.location.href = "login.html";
+      if (loggedUser.length > 0) {
+        localStorage.setItem("loggeduser", JSON.stringify(loggedUser));
+        alert("Logged in Successfully");
+        window.location.href = "../public/index.html";
+      } else {
+        alert("Please Use Valid Username & Password");
+        window.location.href = "./signup.html";
+      }
     };
 
-    submitForm.addEventListener("submit", handleSubmit);
+    loginForm.addEventListener("submit", (event) => handleSubmit(event));
   </script>
+
 </body>
 
 </html>
