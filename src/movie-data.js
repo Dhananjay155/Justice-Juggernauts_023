@@ -56,26 +56,26 @@ var titles ={
 //craete thumbs swiper
 
 var thumbsSwiper = new Swiper(".thumbsSwiper",{
-    spaceBetween:10,
-    slidPerView:5,
+    spaceBetween: 10,
+    slidesPerView: 5,
     breakpoints:{
         200:{
-            slidPerView: 1.5
+            slidesPerView: 1.5
         },
         400:{
-            slidPerView: 1.5
+            slidesPerView: 1.5
         },
         600:{
-            slidPerView: 1.5
+            slidesPerView: 3
         },
         1100:{
-            slidPerView: 1.5
+            slidesPerView: 5
         },
     },
     freeMode: true,
     watchSlidesProgress: true,
 
-})
+});
 
 
 
