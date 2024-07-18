@@ -252,6 +252,11 @@ a:hover {
     margin: 0 3px !important;
 }
 
+.bannerSwiper .swiper-slide-active{
+    animation: banner .4s;
+}
+
+
 .desc{
     display: flex;
     flex-direction: column;
@@ -339,6 +344,97 @@ button >*{
     transform: translateY(-26);
 }
 
+/* Overlay */
 
+.overlay{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    padding: 20px;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    z-index: 1000000;
+    animation: grow .7s;
+}
+.show{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay i{
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: .7;
+    transition: all .5s ease-in-out;
+
+}
+.overlay i:hover{
+    color: var(--primary);
+    rotate: 180deg;
+    scale: 1.4;
+    opacity: 1;
+}
+
+video{
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+/* Animation */
+
+@keyframes grow {
+    0%{
+        width: 0%;
+        height: 0%;
+
+    }
+}
+@keyframes slideLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(300%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideRight {
+    0%{
+        opacity: 0;
+        transform: translateX(-130px);
+
+    } 
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }   
+}
+@keyframes slideUp {
+    0%{
+        opacity: 0;
+        transform:translateY(200%) ;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes banner {
+    0%{
+        transform: skew(30deg, 40deg) scale(55);
+    }
+}
 
 /* nik code end here */

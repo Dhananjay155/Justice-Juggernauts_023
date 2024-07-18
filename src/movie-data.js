@@ -106,4 +106,17 @@ const swiper = new Swiper('.bannerSwiper', {
     }
  
   });
+
+  //Show overlay
+
+var overlay = document.querySelector(".overlay");
+var showTrailer = () =>{
+    overlay.classList.add("show");
+
+};
+
+  //close overlay
+  var closeoverlay = () =>{
+    overlay.classList.remove('show')
+}
   
