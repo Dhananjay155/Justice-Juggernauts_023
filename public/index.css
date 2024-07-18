@@ -331,6 +331,14 @@ button >*{
     border-radius: 20px;
     
 }
+.thumbsSwiper .swiper-slide img{
+    border-radius:15px ;
+
+}
+.thumbsSwiper .swiper-slide:hover{
+    transform: translateY(-26);
+}
+
 
 
 /* nik code end here */

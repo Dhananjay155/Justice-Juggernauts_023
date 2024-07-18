@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,7 +94,6 @@
     }
   </style>
 </head>
-
 <body>
 
   <div id="maincontainer">
@@ -117,7 +115,7 @@
     forgotPasswordBtn.addEventListener("click", () => {
       let email = prompt("Please enter your email:");
       if (email) {
-        fetch(`http://localhost:3000/users?email=${email}`)
+        fetch(`http://localhost:4000/users?email=${email}`)
           .then(response => response.json())
           .then(users => {
             if (users.length > 0) {
@@ -134,7 +132,7 @@
       event.preventDefault();
       let userName = event.target[0].value;
       let passWord = event.target[1].value;
-      let URL = "http://localhost:3000/users";
+      let URL = "http://localhost:4000/users";
       let res = await fetch(URL);
       let users = await res.json();
       let loggedUser = users.filter((ele) => {
@@ -143,10 +141,10 @@
       if (loggedUser.length > 0) {
         localStorage.setItem("loggeduser", JSON.stringify(loggedUser));
         alert("Logged in Successfully");
-        window.location.href = "../public/index.html";
+        window.location.href = "../public/index.html"; // Adjusted path
       } else {
         alert("Please Use Valid Username & Password");
-        window.location.href = "./signup.html";
+        window.location.href = "signup.html";
       }
     };
 
@@ -154,5 +152,4 @@
   </script>
 
 </body>
-
 </html>
