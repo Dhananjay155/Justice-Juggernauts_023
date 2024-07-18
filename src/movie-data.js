@@ -104,6 +104,6 @@ const swiper = new Swiper('.bannerSwiper', {
     thumbs:{
         swiper: thumbsSwiper
     }
-
+ 
   });
   
