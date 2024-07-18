@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Cards</title>
+    <link rel="icon" href="../assets/icon-movie.jpg">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            padding: 50px 0;
+        }
+
+        .card {
+            display: flex;
+            margin: 20px 0;
+            overflow: hidden;
+            width: 80%;
+            max-width: 1200px;
+            opacity: 0;
+            transition: all 0.6s ease-out;
+            background: transparent;
+            color: white;
+        }
+
+        .card.right {
+            flex-direction: row-reverse;
+        }
+
+        .card img {
+            width: 50%;
+            height: auto;
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .card-content p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .card-content button {
+            background-color: #ff4040;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .card-content button:hover {
+            background-color: #cc3333;
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+            }
+
+            .card.right {
+                flex-direction: column;
+            }
+
+            .card img,
+            .card-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card left">
+            <img src="../assets/card1.png" alt="Movie 1">
+            <div class="card-content">
+                <h3>Watch Olympic Glory Together</h3>
+                <p>Experience the 2024 Paris Olympics on NBC at AMC Theatres! Watch NBC's daytime coverage and cheer with fellow fans. Don't miss the world's biggest games on the big screen from 7/26-8/11.</p>
+                <button>Get Tickets</button>
+            </div>
+        </div>
+        <div class="card right">
+            <img src="../assets/card2.png" alt="Movie 2">
+            <div class="card-content">
+                <h3>Embrace the Chase</h3>
+                <p>Experience a whirlwind of flavor when you order a TORNADO WRANGLER at MacGuffins Bar®! Enjoy the taste of Twisted Tea and Tito’s Vodka spun with a spritz of peach when you see TWISTERS, in theatres 7/19.</p>
+                <button>Get Tickets</button>
+            </div>
+        </div>
+        <div class="card left">
+            <img src="../assets/card3.png" alt="Movie 3">
+            <div class="card-content">
+                <h3>Sip Like a Supervillain</h3>
+                <p>Try a taste of despicably delicious flavors like Gru Blue Raspberry or Mega Jerry Red Cherry when you buy an ICEE© and get tickets to see DESPICABLE ME 4, now showing.</p>
+                <button>Get Tickets</button>
+            </div>
+        </div>
+        <div class="card right">
+            <img src="../assets/card4.png" alt="Movie 4">
+            <div class="card-content">
+                <h3>Why You Have To See Longlegs</h3>
+                <p>LONGLEGS has been recognized as an AMC Artisan Film. See if you might be able to brave the unsettling twists and turns in the horror movie with our guide.</p>
+                <button>Get Tickets</button>
+            </div>
+        </div>
+        <div class="card left">
+            <img src="../assets/card5.png" alt="Movie 5">
+            <div class="card-content">
+                <h3>Escape with Our Trap Sweepstakes</h3>
+                <p>Get tickets to see TRAP on the big screen 8/1/-8/4 and you could win a trip to Los Angeles with a premium escape room experience, a $500 gift card and more!</p>
+                <button>Get Tickets</button>
+            </div>
+        </div>
+        <div class="card right">
+            <img src="../assets/card6.png" alt="Movie 6">
+            <div class="card-content">
+                <h3>Movies Are Better with Rewards</h3>
+                <p>Enjoy Discount Tuesdays ticket savings, $5 rewards, free large popcorn refills, and many other valuable benefits. Become an AMC Stubs Insider™ now and make your next movie visit more rewarding.</p>
+                <button>join for FREE</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for scroll-based animations
+        const cards = document.querySelectorAll('.card');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        });
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
