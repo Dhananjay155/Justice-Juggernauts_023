@@ -48,5 +48,27 @@ var titles ={
         desc: "Geralt of Rivia, a solitary monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.",
         videoURL: "../assets/it-official-teaser-trailer-warner-bros-uk-1080-ytshorts.savetube.me.mp4",
     
-    }
-}
+    },
+};
+
+
+// swiper
+const swiper = new Swiper('.bannerSwiper', {
+   spaceBetween: 0,
+   effect: "fade",
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+        clickable: true,
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+
+  });
+  

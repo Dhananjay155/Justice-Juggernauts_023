@@ -2,7 +2,7 @@
 
 
 
-// movie search and square card
+
 // start hiren code
 const searchBox = document.getElementById("searchBox");
         const clearButton = document.getElementById("clearButton");
