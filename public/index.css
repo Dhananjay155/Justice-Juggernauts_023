@@ -239,6 +239,7 @@ a:hover {
 .swiper-pagination{
     height: 20px !important;
     bottom: 100px !important;
+    top: 400px !important;
     width: 100%;
 
 }
@@ -246,16 +247,16 @@ a:hover {
 .swiper-pagination-bullet{
     width: 50px !important;
     background-color: #eee !important;
-    place-content: .6;
+    place-content: 0.6;
     height: 3px !important;
     border-radius: 10px !important;
     margin: 0 3px !important;
 }
 
 .bannerSwiper .swiper-slide-active{
-    animation: banner .4s;
+    animation: banner .9s;
 }
-
+/* banner */
 
 .desc{
     display: flex;
