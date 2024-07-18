@@ -1,87 +1,336 @@
-/* start hiren code */
-.container {
-    max-width: 1350px;
-    margin: auto;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f2f2f2;
+/* import font style */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+
+
+
+/* body code and head this is top*/
+* {
+    /* background-color: black; */
+    margin: 0;
+    padding: 0;
 }
-#searchContainer {
+
+:root {
+    --primary: #a63399;
+    --secondary: #e66b70;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    font-size: 14px;
+    color: #eee;
+    background-color: black;
+    overflow: hidden;
+}
+
+/* nik code start */
+/* header */
+.header {
+    width: 93%;
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    
+    justify-content: space-between;
+    padding: 7px 40px;
+    z-index: 1000;
 }
-#searchBox {
-    padding: 10px;
+/* nav stlye will be here  */
+
+#rtnav{
+    position: relative;
+    top: 0;
+    /* left: 0; */
+    right: 770px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 40px;
+    z-index: 1000;
+}
+/* left nav top  */
+#singup{
+    position: relative;
+    top: 0;
+    left: 10;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 40px;
+    z-index: 1000;
+}
+
+
+nav ul {
+    display: flex;
+    gap: 30px;
+
+}
+
+nav ul li a {
+    color: #eee;
+    text-transform: capitalize;
+    font-size: 20px;
+    letter-spacing: .4px;
+
+}
+
+nav li {
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* banner 1 */
+
+.banner{
+    height: 100vh;
     width: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+}
+
+/* swiper */
+
+.swiper{
+    height: 100%;
+    width: 100%;
+    z-index: 11 !important;
+
+}
+
+.swiper-slide{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+/* content */
+
+.content{
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 66px 40px;
+    position: relative;
+
+}
+
+.content >*{
+    width: 50%;
+    position: relative;
+    height: 100%;
+
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#title h1{
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+#sub-title p{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.rating{
+    margin: 50px 0p;
+    font-size: 12px;
+}
+.rating span{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 12px;
+}
+.rating .fa-soild{
+    color: yellow;
+}
+.navigation-btn{
+    display: flex;
+    gap: 25px;
+}
+
+/* swiper buttion (override) */
+
+.swiper-button-prev,
+.swiper-button-next{
+    position: relative !important;
+    color: #eee !important;
+    height: 20px !important;
+    width: 20px !important;
+    margin: 0 !important;
+    right: unset !important;
+    left:  unset !important;
+    top: unset !important;
+
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+    color: var(--primary);
+}
+
+/* change the defalut icon */
+.swiper-button-next:after{
+    content: "\f061" !important;
+}
+
+.swiper-button-prev:after{
+    content: "\f060" !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after{
+    font-family: 'font Awesome 6 Free' !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+
+}
+
+
+/* swiper pagination */
+
+.swiper-pagination{
+    height: 20px !important;
+    bottom: 100px !important;
+    width: 100%;
+
+}
+
+.swiper-pagination-bullet{
+    width: 50px !important;
+    background-color: #eee !important;
+    place-content: .6;
+    height: 3px !important;
+    border-radius: 10px !important;
+    margin: 0 3px !important;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    text-align: justify;
+}
+
+#desc{
+    font-size: 15px;
+    max-width: 300px;
+    line-height: 1.3;
+    margin: 40px 0;
+}
+
+/* buttons */
+
+button{
+
+    font-family: "Lato";
+    background: transparent;
+    border-radius: 25px;
+    border: none;
+    color: #eee;
+    text-transform: uppercase;
+    font-size: 12px !important;
+    cursor: pointer;
+    transition: all .3s;
+
+}
+
+button >*{
     margin-right: 10px;
 }
-#clearButton {
-    padding: 10px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.btn-primary{
+    background-image: linear-gradient(to left,
+    var(--primary), var(--secondary));
+    padding: 13px 45px;
+    transition: all .7s;
+
 }
-#container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+
+.btn-primary:hover{
+    scale: 1.1;
+    background-image: none;
+    border: 2px solid var(--primary);
+    color: var(--primary);
 }
-.card {
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-.card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-.card button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.card button:hover {
-    background-color: #0056b3;
-}
-#pagination {
-    margin-top: 20px;
-    text-align: center;
-}
-#pagination button {
+.btn-sec{
+    border: 2px solid #eee;
     padding: 10px 20px;
-    margin: 0 5px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    margin-right: 10px;
+}
+.btn-sec:hover{
+    background-color: rgba(0,0,0,.534);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Thumbs  */
+
+.thumbsSwiper{
+    box-sizing: border-box;
+    padding: 10px 0;
+    max-width: 90%;
+    overflow-y: unset !important;
+
+}
+
+.thumbsSwiper .swiper-slide{
+    width: 25%;
+    height: 100%;
+    opacity: 1;
     cursor: pointer;
+    padding: 0 10px;
+    background-color: transparent;
+    border-radius: 20px;
+    
 }
-#pagination button:hover {
-    background-color: #0056b3;
-}
-#pagination span {
-    margin: 0 10px;
-}
-@media (max-width: 768px) {
-    #container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (max-width: 480px) {
-    #container {
-        grid-template-columns: 1fr;
-    }
-}
-/* end hiren code */
+
+
+/* nik code end here */
