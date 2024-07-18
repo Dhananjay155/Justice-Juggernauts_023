@@ -79,50 +79,75 @@
     }
   </style>
 </head>
-
 <body>
-
   <div id="maincontainer">
     <div class="container">
       <div class="heading">Sign Up</div>
-      <form class="form">
+      <form class="form" id="signupForm">
         <input required class="input" type="text" placeholder="Username">
         <input required class="input" type="email" placeholder="Email">
         <input required class="input" type="number" placeholder="Phone Number">
         <input required class="input" type="password" placeholder="Password">
         <input class="login-button" type="submit" value="Sign Up">
+        <span>Already an existing user?</span>
+        <button class="login-button" type="button" id="loginButton">Login</button>
       </form>
     </div>
   </div>
 
   <script>
-    let submitForm = document.querySelector("form");
+    const submitForm = document.getElementById("signupForm");
 
-    let handleSubmit = async (event) => {
+    const handleSubmit = async (event) => {
       event.preventDefault();
-      let id = Math.random().toString();
-      let obj = {
-        id,
+      const obj = {
+        id: Date.now().toString(),
         username: event.target[0].value,
         email: event.target[1].value,
         number: event.target[2].value,
-        password: event.target[3].value
+        password: event.target[3].value,
       };
 
-      await fetch("http://localhost:3000/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(obj)
-      });
+      console.log("Submitting form with data:", obj);
 
-      window.location.href = "login.html";
+      try {
+        const usersRes = await fetch("http://localhost:4000/users");
+        console.log("Fetch users response:", usersRes);
+        if (!usersRes.ok) throw new Error("Failed to fetch users");
+
+        const users = await usersRes.json();
+        console.log("Users fetched:", users);
+        const userExists = users.some(user => user.email === obj.email);
+
+        if (userExists) {
+          alert("User already exists. Please login to your account.");
+          window.location.href = "login.html";
+        } else {
+          const saveUserRes = await fetch("http://localhost:4000/users", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(obj),
+          });
+          console.log("Save user response:", saveUserRes);
+          if (!saveUserRes.ok) throw new Error("Failed to save user");
+
+          alert("Signup successful. Redirecting to login page.");
+          window.location.href = "login.html"; 
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again. Error: " + error.message);
+      }
     };
 
     submitForm.addEventListener("submit", handleSubmit);
+
+    document.getElementById("loginButton").addEventListener("click", () => {
+      window.location.href = "login.html";
+    });
   </script>
 </body>
 
 </html>
- 
