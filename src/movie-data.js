@@ -53,6 +53,37 @@ var titles ={
 
 
 // swiper
+//craete thumbs swiper
+
+var thumbsSwiper = new Swiper(".thumbsSwiper",{
+    spaceBetween:10,
+    slidPerView:5,
+    breakpoints:{
+        200:{
+            slidPerView: 1.5
+        },
+        400:{
+            slidPerView: 1.5
+        },
+        600:{
+            slidPerView: 1.5
+        },
+        1100:{
+            slidPerView: 1.5
+        },
+    },
+    freeMode: true,
+    watchSlidesProgress: true,
+
+})
+
+
+
+
+
+
+
+
 const swiper = new Swiper('.bannerSwiper', {
    spaceBetween: 0,
    effect: "fade",
@@ -68,7 +99,11 @@ const swiper = new Swiper('.bannerSwiper', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-  
+
+    // make thumbs slider works as thumbs for the banner slide
+    thumbs:{
+        swiper: thumbsSwiper
+    }
 
   });
   
