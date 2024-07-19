@@ -497,8 +497,36 @@ video{
         transform: skew(30deg, 40deg) scale(55);
     }
 }
+/* Responsive  */ 
 
 
+@media only screen and (max-width: 720px){
+    .content{
+        flex-wrap: wrap;
+        padding: 66px 20px;
+    }
+    .content > *{
+        width: 100%;
+        height: auto;
+        align-items: flex-start;
+
+    }
+    .swiper-pagination{
+        bottom: 36px !important;
+    }
+    #tittle h1{
+        font-size: 55px;
+    }
+    .desc p{
+        margin:20px 0;
+    }
+    .rating{
+        margin: 20px 0;
+    }
+    .thumbsSwiper .swiper-slide:hover{
+        transform: translateY(-16);
+    }
+}
 
 
 

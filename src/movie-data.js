@@ -152,7 +152,9 @@ var showTrailer = () =>{
 
   //close overlay
   var closeoverlay = () =>{
-    // pause the video 
+    // pause the video when close the overlay
+    var video = document.querySelector('#video');
+    video.pause();
     overlay.classList.remove('show')
 }
   

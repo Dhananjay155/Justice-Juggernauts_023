@@ -131,18 +131,27 @@
     let handleSubmit = async (event) => {
       event.preventDefault();
       let userName = event.target[0].value;
+      let usersEmail = event.target[0].value;
+
       let passWord = event.target[1].value;
       let URL = "http://localhost:4000/users";
       let res = await fetch(URL);
       let users = await res.json();
       let loggedUser = users.filter((ele) => {
-        return ele.username == userName && ele.password == passWord;
+        return ele.username == userName || usersEmail && ele.password == passWord;
       });
       if (loggedUser.length > 0) {
         localStorage.setItem("loggeduser", JSON.stringify(loggedUser));
+        let loggedname = users.filter((ele) => {
+        return ele.username ;
+      });
+      console.log(loggedname);
         alert("Logged in Successfully");
+
         window.location.href = "../public/index.html"; // Adjusted path
-      } else {
+
+      }
+       else {
         alert("Please Use Valid Username & Password");
         window.location.href = "signup.html";
       }
