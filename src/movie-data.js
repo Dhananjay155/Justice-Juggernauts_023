@@ -5,7 +5,7 @@ var titles ={
         title: "it Ends",
         subTitel: "Horror-Drama-movie",
         rating: 8.483,
-        desc: " ",
+        desc: "The horror thriller “IT”, directed by Andrés Muschietti (“Mama”), is based on the hugely popular Stephen King novel of the same name, which has been terrifying readers for decades. When children begin to disappear in . ",
         videoURL: "../assets/it-official-teaser-trailer-warner-bros-uk-1080-ytshorts.savetube.me.mp4",
     },
     1:{

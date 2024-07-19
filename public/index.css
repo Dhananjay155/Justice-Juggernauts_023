@@ -515,17 +515,26 @@ video{
         bottom: 36px !important;
     }
     #tittle h1{
-        font-size: 55px;
+        font-size: 40px;
     }
     .desc p{
         margin:20px 0;
     }
     .rating{
-        margin: 20px 0;
+        margin: 13px 0;
     }
     .thumbsSwiper .swiper-slide:hover{
         transform: translateY(-16);
     }
+
+}
+
+@media only screen and (max-width: 400px){
+    .header{
+        flex-wrap: wrap;
+        padding: 7px 20px;
+    }
+    
 }
 
 
