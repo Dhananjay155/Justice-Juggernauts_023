@@ -1,0 +1,116 @@
+/* card style */
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        } */
+
+        /* 
+        <div class="Promotion-container Promotion--hasBg Promotion--isParallax promotion--reverse" style="padding: 0px 0px 4em; background-image: url(&quot;https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto/v1626972040/amc-cdn/general/home/1500x1211_WebBackground_Blue_rev.png&quot;); background-position: center center;">
+<div class="grid-wrapper u-container Promotion-innerContainer">
+
+
+        */
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            /* background: url(https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto/v1626972040/amc-cdn/general/home/1500x1211_WebBackground_Blue_rev.png); */
+
+            background:url(../assets/hd-img/bg-big-card.avif) no-repeat;
+            /* background: url(https://th.bing.com/th/id/OIP.9Jx6HmIMgzP7uSxcCouCKgHaPT?pid=ImgDet&w=161&h=333&c=7) no-repeat; */
+            background-position: start;
+            /* padding: 0px 0px 4em; */
+            /* background: linear-gradient(to bottom, #1e3c72, #2a5298); */
+            padding: 50px 0;
+        }
+
+        .card {
+            display: flex;
+            margin: 20px 0;
+            overflow: hidden;
+            width: 80%;
+            max-width: 1200px;
+            opacity: 0;
+            transition: all 2s ease-out;
+            background: transparent;
+            color: white;
+        }
+
+        .card.right {
+            flex-direction: row-reverse;
+        }
+
+        .card img {
+            width: 50%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .card img:hover{
+            transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(1%);
+            transition: 0.2s ease-in-out;
+            /* z-index: 1; */
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .card-content p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .card-content button {
+            background-color: #ff4040;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .card-content button:hover {
+            background-color: #cc3333;
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+            }
+
+            .card.right {
+                flex-direction: column;
+            }
+
+            .card img,
+            .card-content {
+                width: 100%;
+            }
+        }
+    

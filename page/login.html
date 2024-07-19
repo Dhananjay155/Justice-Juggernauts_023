@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="icon" href="../assets/icon-movie.jpg">
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+    body {
+      background: url("https://c4.wallpaperflare.com/wallpaper/22/762/507/film-movie-filmmaker-movie-director-wallpaper-preview.jpg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .container {
+      max-width: 450px;
+      border-radius: 40px;
+      padding: 25px 35px;
+      box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+      margin: 20px;
+      background-color: white;
+    }
+
+    #maincontainer {
+      max-width: 450px;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+
+    .heading {
+      text-align: center;
+      font-weight: 900;
+      font-size: 30px;
+      color: black;
+    }
+
+    .form {
+      margin-top: 20px;
+    }
+
+    .form .input {
+      width: 90%;
+      background: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 20px;
+      margin-top: 15px;
+      box-shadow: #080c0e 0px 10px 10px -5px;
+      border-inline: 2px solid transparent;
+    }
+
+    .form .login-button {
+      display: block;
+      width: 100%;
+      font-weight: bold;
+      background: orange;
+      color: white;
+      padding-block: 15px;
+      margin: 20px auto;
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.878) 0px 20px 10px -15px;
+      border: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .form .login-button:hover {
+      transform: scale(1.03);
+      box-shadow: rgba(0, 0, 0, 0.878) 0px 23px 10px -20px;
+    }
+
+    .form .login-button:active {
+      transform: scale(0.95);
+      box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+    }
+
+    .form .forgot-password {
+      display: block;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    #signup-btn {
+      cursor: pointer;
+    }
+
+    #log {
+      cursor: pointer;
+    }
+
+    /* nav  */
+    /* Basic styles for the navbar */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      /* background-color: #333; */
+      padding: 0 20px;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-links a:hover {
+      color: #a63399;
+    }
+
+
+    .navbar-links li {
+      margin-left: 20px;
+    }
+
+    .navbar-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    /* Styles for the toggle button */
+    .toggle-button {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .toggle-button .bar {
+      height: 3px;
+      width: 25px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: 0.4s;
+
+    }
+    
+  /* Styles for the toggle button when active */
+  .toggle-button.active .bar:nth-child(1) {
+    transform: rotate(65deg) translate(10px, 5px);
+}
+
+.toggle-button.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle-button.active .bar:nth-child(3) {
+    transform: rotate(-65deg) translate(10px, -5px);
+}
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .toggle-button {
+        display: flex;
+      }
+
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .2);
+        backdrop-filter: blur(9px);
+     
+        border-radius: 12px;
+
+        position: absolute;
+        top: 60px;
+        left: 0;
+      }
+
+      .navbar-links.active {
+        display: flex;
+      }
+
+      .navbar-links li {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .navbar-links li a {
+        display: block;
+        padding: 10px 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- head -->
+  <header class="header">
+    <div class="logo">
+      <a href="../public/index.html">
+        <img src="../assets/icon-movie-removebg-preview.png" alt="logo">
+      </a>
+    </div>
+    <nav>
+      <div class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="../public/index.html">Home</a></li>
+
+        <li><a href="../page/movie.search.html">Movie</a></li>
+
+        <li>
+          <a href="../page/signup.html">Sign Up</a>
+        </li>
+        <li><a href="../page/login.html">Log In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main -->
+  <div id="maincontainer">
+    <div class="container">
+      <div class="heading">Login</div>
+      <form class="form" id="login-form">
+        <input required="" class="input" type="text" name="email" id="email" placeholder="Username">
+        <input required="" class="input" type="password" name="password" id="password" placeholder="Password">
+        <span class="forgot-password"><a href="#" id="forgot-password">Forgot Password?</a></span>
+        <input id="log" class="login-button" type="submit" value="Login">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let loginForm = document.getElementById("login-form");
+    let forgotPasswordBtn = document.getElementById("forgot-password");
+
+    forgotPasswordBtn.addEventListener("click", () => {
+      let email = prompt("Please enter your email:");
+      if (email) {
+        fetch(`http://localhost:4000/users?email=${email}`)
+          .then(response => response.json())
+          .then(users => {
+            if (users.length > 0) {
+              let user = users[0];
+              alert(`Your password is: ${user.password}`);
+            } else {
+              alert("Email not found!");
+            }
+          });
+      }
+    });
+
+    let handleSubmit = async (event) => {
+      event.preventDefault();
+      let userName = event.target[0].value;
+      let usersEmail = event.target[0].value;
+
+      let passWord = event.target[1].value;
+      let URL = "http://localhost:4000/users";
+      let res = await fetch(URL);
+      let users = await res.json();
+      let loggedUser = users.filter((ele) => {
+        return ele.username == userName || usersEmail && ele.password == passWord;
+      });
+      if (loggedUser.length > 0) {
+        localStorage.setItem("loggeduser", JSON.stringify(loggedUser));
+        let loggedname = users.filter((ele) => {
+        return ele.username ;
+      });
+      console.log(loggedname);
+        alert("Logged in Successfully");
+
+        window.location.href = "../public/index.html"; // Adjusted path
+
+      }
+       else {
+        alert("Please Use Valid Username & Password");
+        window.location.href = "signup.html";
+      }
+    };
+
+    loginForm.addEventListener("submit", (event) => handleSubmit(event));
+// nav active
+const toggleButton = document.querySelector('.toggle-button');
+    const navbarLinks = document.querySelector('.navbar-links');
+
+    toggleButton.addEventListener('click', () => {
+      toggleButton.classList.toggle('active');
+      navbarLinks.classList.toggle('active');
+    });
+
+  </script>
+
+</body>
+</html>

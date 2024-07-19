@@ -1,0 +1,597 @@
+/* import font style */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+
+
+
+/* body code and head this is top*/
+* {
+    /* background-color: black; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #a63399;
+    --secondary: #e66b70;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    position: relative;
+    /* height: 100%; */
+    font-size: 14px;
+    color: #eee;
+    background-color: black;
+    /* overflow: hidden; */
+}
+
+#container-landing{
+    height: 100%;
+
+}
+/* nik code start */
+
+/* header  nav bar */
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 40px;
+    z-index: 1000;
+}
+/* navbar for responsive */
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+
+#hh{
+    font-size: xx-large;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+
+}
+
+nav ul li a {
+    color: #eee;
+    text-transform: capitalize;
+    font-size: 20px;
+    letter-spacing: .4px;
+
+}
+
+nav li {
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+.logo img {
+    height: 50px;
+}
+ /* Styles for the toggle button */
+ .toggle-button {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .toggle-button.active .bar:hover{
+    background-color: aqua;
+  }
+
+  .toggle-button .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+
+  }
+
+  /* Styles for the toggle button when active */
+.toggle-button.active .bar:nth-child(1) {
+    transform: rotate(65deg) translate(10px, 5px);
+}
+
+.toggle-button.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle-button.active .bar:nth-child(3) {
+    transform: rotate(-65deg) translate(10px, -5px);
+}
+
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .toggle-button {
+      display: flex;
+    }
+
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, .2);
+      backdrop-filter: blur(9px);
+   
+      border-radius: 220px;
+
+      position: absolute;
+      top: 60px;
+      left: 0;
+    }
+
+    .navbar-links.active {
+      display: flex;
+      gap: 0px;
+      margin-left: 18px;
+    }
+
+    .navbar-links li {
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .navbar-links li a {
+      display: block;
+      padding: 10px 0;
+    }
+  }
+
+
+/* banner 1 */
+
+.banner{
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+}
+
+/* swiper */
+
+.swiper{
+    height: 100%;
+    width: 100%;
+    z-index: 11 !important;
+
+}
+
+.swiper-slide{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+/* content */
+
+.content{
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 66px 40px;
+    position: relative;
+
+}
+
+.content >*{
+    width: 50%;
+    position: relative;
+    height: 100%;
+
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#title h1{
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: 800;
+    animation:slideRight .7s cubic-bezier(.52,.19,.3,1.46) ;
+}
+#sub-title p{
+    font-size: 20px;
+    text-transform: capitalize;
+    animation:slideRight .7s ;
+}
+
+.rating{
+    margin: 50px 0;
+    font-size: 12px;
+}
+.rating span{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 12px;
+}
+.rating .fa-solid{
+    color: yellow;
+}
+.navigation-btn{
+    display: flex;
+    gap: 25px;
+}
+
+/* swiper buttion (override) */
+
+.swiper-button-prev,
+.swiper-button-next{
+    position: relative !important;
+    color: #eee !important;
+    height: 20px !important;
+    width: 20px !important;
+    margin: 0 !important;
+    right: unset !important;
+    left:  unset !important;
+    top: unset !important;
+
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+    color: var(--primary);
+}
+
+/* change the defalut icon */
+.swiper-button-next:after{
+    content: "\f061" !important;
+}
+
+.swiper-button-prev:after{
+    content: "\f060" !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after{
+    font-family: 'font Awesome 6 Free' !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+
+}
+
+
+/* swiper pagination */
+
+.swiper-pagination{
+    height: 20px !important;
+ 
+    bottom: 80px !important;
+    width: 100%;
+   
+    
+
+}
+
+.swiper-pagination-bullet{
+    width: 50px !important;
+    background-color: #eee !important;
+    place-content: 0.6;
+    height: 3px !important;
+    border-radius: 10px !important;
+    margin: 0 3px !important;
+}
+
+.bannerSwiper .swiper-slide-active{
+    animation: banner .4s;
+}
+/* banner */
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    text-align: justify;
+}
+
+#desc p{
+    font-size: 15px;
+    max-width: 300px;
+    line-height: 1.3;
+    margin: 40px 0;
+    animation:slideLeft ;
+}
+
+/* buttons */
+
+button{
+
+    font-family: "Lato";
+    background: transparent;
+    border-radius: 25px;
+    border: none;
+    color: #eee;
+    text-transform: uppercase;
+    font-size: 12px !important;
+    cursor: pointer;
+    transition: all .3s;
+    animation: slideUp .6s;
+
+}
+
+button >*{
+    margin-right: 10px;
+}
+.btn-primary{
+    background-image: linear-gradient(to left,
+    var(--primary), var(--secondary));
+    padding: 13px 45px;
+    transition: all .7s;
+
+}
+
+.btn-primary:hover{
+    scale: 1.1;
+    background-image: none;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+.btn-sec{
+    border: 2px solid #eee;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+.btn-sec:hover{
+    background-color: rgba(0,0,0,.534);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Thumbs  */
+
+.thumbsSwiper{
+    box-sizing: border-box;
+    padding: 10px 0;
+    max-width: 90%;
+    overflow-y: unset !important;
+
+}
+
+.thumbsSwiper .swiper-slide{
+    width: 25%;
+    height: 100%;
+    opacity: 1;
+    cursor: pointer;
+    padding: 0 10px;
+    background-color: transparent;
+    border-radius: 20px;
+    z-index: 10;
+
+}
+
+.thumbsSwiper .swiper-slide{
+    border-radius: 15px;
+    transition: transform .7s;
+   
+}
+.thumbsSwiper .swiper-slide img{
+    border-radius:15px ;
+    /* z-index: 10; */
+
+}
+
+.thumbsSwiper .swiper-slide:hover{
+transform: translateY(-26%);
+z-index: -1;
+
+}
+
+/* adding annimation for thumb */
+
+.thumbs .swiper-wapper .swiper-slide:nth-child(1){
+    animation: slideleft .5s ease-in-out;
+}
+.thumbs .swiper-wapper .swiper-slide:nth-child(2){
+    animation: slideleft 1.5s ease-in-out;
+    animation-delay: -0.7s;
+}
+.thumbs .swiper-wapper .swiper-slide:nth-child(3){
+    animation: slideleft 1.5s ease-in-out;
+    animation-delay: -0.7s;
+}
+.thumbs .swiper-wapper .swiper-slide:nth-child(4){
+    animation: slideleft 1.5s ease-in-out;
+    animation-delay: -0.3s;
+}
+.thumbs .swiper-wapper .swiper-slide:nth-child(5){
+    animation: slideleft 1.5s ease-in-out;
+    animation-delay: -0.1s;
+}
+
+
+/* Overlay */
+
+.overlay{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    padding: 20px;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    z-index: 1000000;
+    animation: grow .7s;
+}
+.show{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay i{
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: .7;
+    transition: all .5s ease-in-out;
+
+}
+.overlay i:hover{
+    color: var(--primary);
+    rotate: 180deg;
+    scale: 1.4;
+    opacity: 1;
+}
+
+video{
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+/* Animation */
+
+@keyframes grow {
+    0%{
+        width: 0%;
+        height: 0%;
+
+    }
+}
+@keyframes slideLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(300%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideRight {
+    0%{
+        opacity: 0;
+        transform: translateX(-130px);
+
+    } 
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }   
+}
+@keyframes slideUp {
+    0%{
+        opacity: 0;
+        transform:translateY(200%) ;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes banner {
+    0%{
+        transform: skew(30deg, 40deg) scale(55);
+    }
+}
+/* Responsive  */ 
+
+
+@media only screen and (max-width: 720px){
+    .content{
+        flex-wrap: wrap;
+        padding: 66px 20px;
+    }
+    .content > *{
+        width: 100%;
+        height: auto;
+        align-items: flex-start;
+
+    }
+    .swiper-pagination{
+        bottom: 36px !important;
+    }
+    #tittle h1{
+        font-size: 40px;
+    }
+    .desc p{
+        margin:20px 0;
+    }
+    .rating{
+        margin: 13px 0;
+    }
+    .thumbsSwiper .swiper-slide:hover{
+        transform: translateY(-16);
+    }
+
+}
+
+@media only screen and (max-width: 400px){
+    .header{
+        flex-wrap: wrap;
+        padding: 7px 20px;
+
+    }
+  
+}
+
+/* new nav update  */
+
+
+
+
+
+/* nik code end here */
