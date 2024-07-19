@@ -74,7 +74,7 @@ const searchBox = document.getElementById("searchBox");
                 const bookButton = document.createElement('button');
                 bookButton.innerText = "Book Ticket";
                 bookButton.addEventListener('click', () => {
-                    alert(`Bill for ${ele.Title}`);
+                    location.href = 'seat.html';
                 });
 
                 card.append(poster, title, bookButton);
