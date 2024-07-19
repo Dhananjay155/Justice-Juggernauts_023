@@ -29,7 +29,7 @@ var titles ={
         subTitel: "Action / Advanture ",
         rating: 9.125,
         desc: "A washed up monster chaser convinces the U.S. Government to fund a trip to an unexplored island in the South Pacific. Under the guise of geological research, the team travels to Skull Island. Upon arrival, the group .",
-        videoURL: "../assets/it-official-teaser-trailer-warner-bros-uk-1080-ytshorts.savetube.me.mp4",
+        videoURL: "../assets/spiderman.mp4",
     
     },
     4:{
