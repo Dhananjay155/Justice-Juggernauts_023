@@ -92,10 +92,148 @@
     #log {
       cursor: pointer;
     }
+
+    /* nav  */
+    /* Basic styles for the navbar */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      /* background-color: #333; */
+      padding: 0 20px;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-links a:hover {
+      color: #a63399;
+    }
+
+
+    .navbar-links li {
+      margin-left: 20px;
+    }
+
+    .navbar-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    /* Styles for the toggle button */
+    .toggle-button {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .toggle-button .bar {
+      height: 3px;
+      width: 25px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: 0.4s;
+
+    }
+    
+  /* Styles for the toggle button when active */
+  .toggle-button.active .bar:nth-child(1) {
+    transform: rotate(65deg) translate(10px, 5px);
+}
+
+.toggle-button.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle-button.active .bar:nth-child(3) {
+    transform: rotate(-65deg) translate(10px, -5px);
+}
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .toggle-button {
+        display: flex;
+      }
+
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .2);
+        backdrop-filter: blur(9px);
+     
+        border-radius: 12px;
+
+        position: absolute;
+        top: 60px;
+        left: 0;
+      }
+
+      .navbar-links.active {
+        display: flex;
+      }
+
+      .navbar-links li {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .navbar-links li a {
+        display: block;
+        padding: 10px 0;
+      }
+    }
+
   </style>
 </head>
 <body>
 
+  <!-- head -->
+  <header class="header">
+    <div class="logo">
+      <a href="../public/index.html">
+        <img src="../assets/icon-movie-removebg-preview.png" alt="logo">
+      </a>
+    </div>
+    <nav>
+      <div class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="../public/index.html">Home</a></li>
+
+        <li><a href="../page/movie.search.html">Movie</a></li>
+
+        <li>
+          <a href="../page/signup.html">Sign Up</a>
+        </li>
+        <li><a href="../page/login.html">Log In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main -->
   <div id="maincontainer">
     <div class="container">
       <div class="heading">Login</div>
@@ -158,6 +296,15 @@
     };
 
     loginForm.addEventListener("submit", (event) => handleSubmit(event));
+// nav active
+const toggleButton = document.querySelector('.toggle-button');
+    const navbarLinks = document.querySelector('.navbar-links');
+
+    toggleButton.addEventListener('click', () => {
+      toggleButton.classList.toggle('active');
+      navbarLinks.classList.toggle('active');
+    });
+
   </script>
 
 </body>

@@ -148,6 +148,19 @@
 
     }
 
+  /* Styles for the toggle button when active */
+  .toggle-button.active .bar:nth-child(1) {
+    transform: rotate(65deg) translate(10px, 5px);
+}
+
+.toggle-button.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle-button.active .bar:nth-child(3) {
+    transform: rotate(-65deg) translate(10px, -5px);
+}
+
     /* Responsive styles */
     @media (max-width: 768px) {
       .toggle-button {
@@ -285,11 +298,13 @@
     document.getElementById("loginButton").addEventListener("click", () => {
       window.location.href = "login.html";
     });
-
+    
+// nav active
     const toggleButton = document.querySelector('.toggle-button');
     const navbarLinks = document.querySelector('.navbar-links');
 
     toggleButton.addEventListener('click', () => {
+      toggleButton.classList.toggle('active');
       navbarLinks.classList.toggle('active');
     });
 
