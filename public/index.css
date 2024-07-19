@@ -108,6 +108,9 @@ a:hover {
     flex-direction: column;
     cursor: pointer;
   }
+  .toggle-button.active .bar:hover{
+    background-color: aqua;
+  }
 
   .toggle-button .bar {
     height: 3px;
@@ -117,6 +120,20 @@ a:hover {
     transition: 0.4s;
 
   }
+
+  /* Styles for the toggle button when active */
+.toggle-button.active .bar:nth-child(1) {
+    transform: rotate(65deg) translate(10px, 5px);
+}
+
+.toggle-button.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle-button.active .bar:nth-child(3) {
+    transform: rotate(-65deg) translate(10px, -5px);
+}
+
 
   /* Responsive styles */
   @media (max-width: 768px) {

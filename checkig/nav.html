@@ -5,97 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Navbar</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- For FontAwesome icons -->
+    <link rel="stylesheet" href="../css/navbar.css">
 
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-     <style>
-/* Basic styles for the navbar */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+</style>
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    background-color: #333;
-    padding: 0 20px;
-}
-
-.logo img {
-    height: 50px;
-}
-
-.navbar-links {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-links li {
-    margin-left: 20px;
-}
-
-.navbar-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-/* Styles for the toggle button */
-.toggle-button {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.toggle-button .bar {
-    height: 3px;
-    width: 25px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: 0.4s;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .toggle-button {
-        display: flex;
-    }
-
-    .navbar-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        left: 0;
-    }
-
-    .navbar-links.active {
-        display: flex;
-    }
-
-    .navbar-links li {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .navbar-links li a {
-        display: block;
-        padding: 10px 0;
-    }
-}
-
-
-     </style>
-</head>
+    </head>
 <body>
     <header class="header">
         <div class="logo">
@@ -124,10 +38,11 @@ body {
         </nav>
     </header>
     <script>
-        const toggleButton = document.querySelector('.toggle-button');
+const toggleButton = document.querySelector('.toggle-button');
 const navbarLinks = document.querySelector('.navbar-links');
 
 toggleButton.addEventListener('click', () => {
+    toggleButton.classList.toggle('active');
     navbarLinks.classList.toggle('active');
 });
 
