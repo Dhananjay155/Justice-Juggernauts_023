@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="path/to/swiper-bundle.min.css">
+    <style>
+        /* Include your CSS here */
+        .thumbsSwiper {
+    box-sizing: border-box;
+    padding: 10px 0;
+    max-width: 90%;
+    overflow-y: unset !important;
+}
+
+.thumbsSwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 1;
+    cursor: pointer;
+    padding: 0 10px;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+.thumbsSwiper .swiper-slide img {
+    border-radius: 15px;
+}
+
+.thumbsSwiper .swiper-slide:hover {
+    transform: translateY(-26%);
+}
+
+    </style>
+</head>
+<body>
+    <div class="thumbs">
+        <div class="swiper thumbsSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../assets/hd-img/it.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../assets/hd-img/deadpool.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../assets/loki-1.jpeg" alt=""></div>
+                <div class="swiper-slide"><img src="../assets/hd-img/spiderman.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../assets/hd-img/thor1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../assets/hd-img/fury.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../assets/hd-img/venom.jpg" alt=""></div>
+            </div>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <script src="path/to/swiper-bundle.min.js"></script>
+    <script>
+        // Include your JavaScript here
+        var thumbsSwiper = new Swiper(".thumbsSwiper", {
+    spaceBetween: 10,
+    slidesPerView: 5,
+    breakpoints: {
+        200: { slidesPerView: 1.5 },
+        400: { slidesPerView: 1.5 },
+        600: { slidesPerView: 3 },
+        1100: { slidesPerView: 5 }
+    },
+    freeMode: true,
+    watchSlidesProgress: true,
+});
+
+const swiper = new Swiper('.bannerSwiper', {
+    spaceBetween: 0,
+    effect: "fade",
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+        swiper: thumbsSwiper
+    }
+});
+
+    </script>
+</body>
+</html>
