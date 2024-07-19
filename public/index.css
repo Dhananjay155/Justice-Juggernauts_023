@@ -47,7 +47,7 @@ body {
 
 }
 /* nik code start */
-/* header */
+/* header  nav bar */
 .header {
     width: 93%;
     position: absolute;
@@ -63,15 +63,13 @@ body {
 
 #rtnav{
     position: relative;
-    top: 0;
-    /* left: 0; */
-    right: 770px;
+    /* top: 0; */
+    /* left: 0px; */
+    right: 200px;
     gap: 20px;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
-    /* padding: 7px 40px; */
-    /* z-index: 1000; */
+   
 }
 /* left nav top  */
 #singup{
@@ -82,8 +80,7 @@ body {
     gap: 20px;
     align-items: center;
     justify-content: space-between;
-    /* padding: 7px 40px; */
-    /* z-index: 1000; */
+    
 }
 #hh{
     font-size: xx-large;
@@ -191,7 +188,7 @@ a:hover {
 }
 
 .rating{
-    margin: 50px 0p;
+    margin: 50px 0;
     font-size: 12px;
 }
 .rating span{
@@ -199,7 +196,7 @@ a:hover {
     font-weight: bold;
     margin-left: 12px;
 }
-.rating .fa-soild{
+.rating .fa-solid{
     color: yellow;
 }
 .navigation-btn{
@@ -252,16 +249,11 @@ a:hover {
 
 .swiper-pagination{
     height: 20px !important;
-    /* bottom: 100px !important; */
-    bottom: 100px !important;
-    top: 400px !important;
-    
+ 
+    bottom: 80px !important;
     width: 100%;
-    top: 450px !important;
-    display: flex;
-    justify-content: center;
-    /* position: absolute;
-    top: 0px; */
+   
+    
 
 }
 
@@ -345,7 +337,7 @@ button >*{
 .thumbsSwiper{
     box-sizing: border-box;
     padding: 10px 0;
-    max-width: 70%;
+    max-width: 90%;
     overflow-y: unset !important;
 
 }
@@ -358,28 +350,25 @@ button >*{
     padding: 0 10px;
     background-color: transparent;
     border-radius: 20px;
-    z-index: 1;
+    z-index: 10;
 
 }
-.thumbsSwiper .swiper-slide img{
-    border-radius:15px ;
 
-}
 .thumbsSwiper .swiper-slide{
     border-radius: 15px;
     transition: transform .7s;
    
 }
 .thumbsSwiper .swiper-slide img{
-border-radius: 15px;
-/* z-index: 1; */
-}
-.thumbsSwiper .swiper-slide:hover{
-transform: translateY(-26%);
+    border-radius:15px ;
+    /* z-index: 10; */
 
 }
+
 .thumbsSwiper .swiper-slide:hover{
-    transform: translateY(-26);
+transform: translateY(-26%);
+z-index: -1;
+
 }
 
 /* adding annimation for thumb */
@@ -533,11 +522,12 @@ video{
     .header{
         flex-wrap: wrap;
         padding: 7px 20px;
+
     }
-    
+  
 }
 
-
+/* new nav update  */
 
 
 
