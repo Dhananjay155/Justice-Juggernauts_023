@@ -9,31 +9,35 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
-        footer {
+        .footer-container {
+            width: 100%;
             background-color: #004080;
             color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            bottom:0px;
+            top:0px;
+            
         }
 
         .footer {
-            background-color: #004080;
-            color: white;
-            padding: 20px;
-            text-align: left;
             width: 100%;
+            max-width: 1200px;
+            padding: 20px;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-
+            text-align: left;
         }
 
         .footer-section {
             margin: 10px;
-
         }
 
         .footer-section h3 {
@@ -68,23 +72,28 @@
 
         .footer-bottom {
             width: 100%;
-            text-align: center;
             margin-top: 20px;
             border-top: 1px solid #c0c0c0;
             padding-top: 10px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            text-align: center;
             flex-wrap: wrap;
         }
 
         .footer-bottom p {
             margin: 5px 0;
+            justify-content: space-between;
         }
 
         .footer-bottom img {
-            height: 20px;
-            margin-right: 10px;
+            width: 250px;
+            padding: 50px;
+        }
+
+        .legal {
+            text-align: center;
         }
 
         .legal a {
@@ -95,11 +104,72 @@
         .legal a:hover {
             color: #c0c0c0;
         }
+
+        .ending {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 1200px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .app-store img {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 10px;
+            }
+
+            .footer-section {
+                margin: 5px 0;
+            }
+
+            .footer-bottom img {
+                width: 200px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 10px;
+            }
+
+            .footer-section {
+                margin: 5px 0;
+            }
+
+            .footer-bottom img {
+                width: 150px;
+                padding: 10px;
+            }
+
+            .ending a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <footer>
+    <footer class="footer-container">
         <div class="footer">
             <div class="footer-section">
                 <h3>Our Company</h3>
@@ -132,25 +202,24 @@
             <div class="footer-section app-store">
                 <h3>Download Our App</h3>
                 <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Download on the App Store"></a>
-              </div>
-            <div class="footer-bottom">
-                <img src="moviebuff logo.jpg" alt="IMAX Logo">
-                <div class="legal">
-                    <p>MovieBuff® is a registered trademark of Moviebuff Corporation. © 2023 MovieBuff Corporation. All rights
-                        reserved.</p>
-                    <p>TO THE MOVIEBUFF®, AT THE MOVIEBUFF®, MOVIES TO THE MOVIEBUFF®</p>
-                  
-                        <a href="#">Terms Of Use</a> |
-                        <a href="#">Privacy Policy</a> |
-                        <a href="#">Cookies Policy</a> |
-                        <a href="#">Privacy Settings</a> |
-                        <a href="#">Do Not Sell or Share My Information</a>
-                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <img src="../assets/moviebuff logo.jpg" alt="IMAX Logo">
+            <div class="legal">
+                <p>MovieBuff® is a registered trademark of Moviebuff Corporation. © 2023 MovieBuff Corporation. All rights
+                    reserved.</p>
+                <p>TO THE MOVIEBUFF®, AT THE MOVIEBUFF®, MOVIES TO THE MOVIEBUFF®</p>
+                <div class="ending">
+                    <a href="#">Terms Of Use</a> |
+                    <a href="#">Privacy Policy</a> |
+                    <a href="#">Cookies Policy</a> |
+                    <a href="#">Privacy Settings</a> |
+                    <a href="#">Do Not Sell or Share My Information</a>
                 </div>
             </div>
         </div>
     </footer>
-
 </body>
 
 </html>

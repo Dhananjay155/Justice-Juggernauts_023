@@ -13,7 +13,7 @@ var titles ={
         subTitel: "Action / Thriller / SCi-Fi",
         rating: 9.145,
         desc: "As the world fell, young Furiosa is snatched from the Green Place of Many Mothers and falls into the hands of a great Biker Horde led by the Warlord Dementus. Sweeping through the Wasteland they come across the Citadel.",
-        videoURL: "../assets/it-official-teaser-trailer-warner-bros-uk-1080-ytshorts.savetube.me.mp4",
+        videoURL: "../assets/deadpool.mp4",
     
     },
     2:{
@@ -29,7 +29,7 @@ var titles ={
         subTitel: "Action / Advanture ",
         rating: 9.125,
         desc: "A washed up monster chaser convinces the U.S. Government to fund a trip to an unexplored island in the South Pacific. Under the guise of geological research, the team travels to Skull Island. Upon arrival, the group .",
-        videoURL: "../assets/it-official-teaser-trailer-warner-bros-uk-1080-ytshorts.savetube.me.mp4",
+        videoURL: "../assets/spiderman.mp4",
     
     },
     4:{
@@ -83,12 +83,6 @@ var thumbsSwiper = new Swiper(".thumbsSwiper",{
     watchSlidesProgress: true,
 
 });
-
-
-
-
-
-
 
 
 const swiper = new Swiper('.bannerSwiper', {
