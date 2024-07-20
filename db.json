@@ -13,6 +13,13 @@
       "email": "nik@abc.com",
       "number": "07739307047",
       "password": "1234"
+    },
+    {
+      "id": "1721496352600",
+      "username": "nikhil",
+      "email": "nikhilbodhgaya@gmail.com",
+      "number": "1234567890",
+      "password": "1234"
     }
   ]
 }

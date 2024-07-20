@@ -16,9 +16,9 @@
             flex-direction: column;
             align-items: center;
 
-            /* background: url(https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto/v1626972040/amc-cdn/general/home/1500x1211_WebBackground_Blue_rev.png); */
+            /* background-image: url(https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto/v1626972040/amc-cdn/general/home/1500x1211_WebBackground_Blue_rev.png) no-repeat; */
 
-            background:url(../assets/hd-img/bg-big-card.avif) no-repeat;
+            background:url(../assets/hd-img/bg-big-card.avif) no-repeat ;
             /* background: url(https://th.bing.com/th/id/OIP.9Jx6HmIMgzP7uSxcCouCKgHaPT?pid=ImgDet&w=161&h=333&c=7) no-repeat; */
             background-position: start;
             /* padding: 0px 0px 4em; */
