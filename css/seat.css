@@ -286,3 +286,29 @@ body.dark-mode #theme-button {
     background: white;
     color: black;
 }
+.movie-details {
+    margin-bottom: 20px;
+}
+
+.movie-details img {
+    width: 200px;
+    border-radius: 5px;
+}
+
+.movie-details div {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+#movie-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#movie-runtime,
+#movie-genre,
+#movie-rating,
+#movie-language {
+    font-size: 1em;
+    color: #555;
+}
