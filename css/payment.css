@@ -15,7 +15,8 @@
 
 .container {
     min-height: 100vh;
-    background: #eee;
+    background: linear-gradient(120deg, #000428, #004e92);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,12 +25,13 @@
 }
 
 .container form {
-    background: #fff;
     border-radius: 5px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
     padding: 20px;
     width: 600px;
     padding-top: 160px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ccc;
 }
 
 .container form .inputBox {
@@ -38,7 +40,7 @@
 
 .container form .inputBox span {
     display: block;
-    color: #999;
+    color: #b4b1b1;
     padding-bottom: 5px;
 }
 

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
     const seats = document.querySelector('.all-seats');
     for (let i = 0; i < 59; i++) {
         const isBooked = Math.random() < 0.5 ? 'booked' : '';
@@ -33,4 +33,3 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('dark-mode');
         document.body.classList.toggle('light-mode');
     });
-});

@@ -1,10 +1,17 @@
-
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
     transition: background 0.1s, color 0.1s;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #000428, #004e92);
+    color: white;
 }
 
 body.light-mode {
@@ -17,70 +24,88 @@ body.dark-mode {
     color: white;
 }
 
+/* Main Container */
 .main {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.tickets {
-    width: 550px;
-    height: fit-content;
-    border-radius: 8px;
-    padding: 16px;
-    background: white;
-    box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
-    transition: background 0.1s, color 0.1s;
-}
-
-body.dark-mode .tickets {
-    background: #333;
-    color: white;
-}
-
-.ticket-selector {
-    background: rgb(243, 243, 243);
-    display: flex;
-    align-items: center;
     flex-direction: column;
-    padding: 16px;
-    border-radius: 8px;
-    transition: background 0.1s, color 0.1s;
+    padding: 20px;
 }
 
-body.dark-mode .ticket-selector {
-    background: #444;
-}
-
-.title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 30px;
-}
-
-.seats {
+/* Movie Details Section */
+.movie-details {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
+    max-width: 300px;
 }
 
-.status {
+.movie-details img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.movie-details div {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+#movie-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#movie-runtime,
+#movie-genre,
+#movie-rating,
+#movie-language {
+    font-size: 1em;
+    color: #ffffff;
+}
+
+/* Tickets Section */
+.tickets {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Ticket Selector Styles */
+.ticket-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    border-radius: 8px;
+    transition: background 0.1s, color 0.1s;
+}
+
+.ticket-selector .status {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    gap: 40px;
 }
 
-.item {
+.status .item {
     font-size: 14px;
     position: relative;
+    
 }
 
-.item::before {
+.status .item::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -90,33 +115,33 @@ body.dark-mode .ticket-selector {
     height: 10px;
     background: rgb(255, 255, 255);
     outline: 1px solid rgb(120, 120, 120);
-    border-radius: 1px;
+    border-radius: 5px;
 }
 
-.item:nth-child(2)::before {
-    background-color:red;
+.status .item:nth-child(2)::before {
+    background-color: red;
     outline: none;
+    border-radius: 5px;
 }
 
-.item:nth-child(3)::before {
+.status .item:nth-child(3)::before {
     background: #47a3ff;
     outline: none;
+    border-radius: 5px;
 }
 
 .all-seats {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-gap: 15px;
-    margin: 60px 0;
-    margin-top: 20px;
-    position: relative;
+    margin: 20px 0;
 }
 
 .seat {
     width: 20px;
     height: 20px;
     background: white;
-    border-radius: 1px;
+    border-radius: 5px;
     outline: 1px solid rgb(180, 180, 180);
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
@@ -126,38 +151,28 @@ body.dark-mode .ticket-selector {
     transform: scale(1.1);
 }
 
-.all-seats input:checked+label {
-    background: #47a3ff;
-    outline: none;
-}
-
 .seat.booked {
-    background-color:red;
+    background-color: red;
     outline: none;
+    cursor: not-allowed;
 }
 
 input {
     display: none;
 }
 
-.seats::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 300px;
-    height: 7px;
-    background: rgb(141, 198, 255);
-    border-radius: 0 0 3px 3px;
-    border-top: 1px solid rgb(180, 180, 180);
+.all-seats input:checked+label {
+    background: #47a3ff;
+    outline: none;
 }
 
+/* Seat Screen Text */
 .screentext {
     margin-top: 10px;
     font-size: 14px;
 }
 
+/* Timings */
 .timings {
     width: 100%;
     display: flex;
@@ -171,20 +186,27 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+
 }
 
 .dates-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.1s, color 0.1s;
     width: 50px;
     height: 50px;
-    background: rgb(175, 174, 174);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 10px 0;
-    border-radius: 2px;
+    border-radius: 159px;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
+    margin: 5px;
 }
 
 .dates-item:hover {
@@ -200,16 +222,19 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 10px;
 }
 
 .time {
-    width: fit-content;
-    padding: 7px 14px;
-    background: rgb(175, 174, 174);
-    border-radius: 2px;
-    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: background 0.3s, transform 0.3s;
+    margin: 5px;
+    cursor: pointer;
 }
 
 .time:hover {
@@ -221,6 +246,7 @@ input {
     color: white;
 }
 
+/* Price Section */
 .price {
     padding: 10px 20px;
     display: flex;
@@ -248,7 +274,7 @@ input {
 }
 
 .price button {
-    background-color:red;
+    background-color: red;
     color: white;
     font-size: 14px;
     padding: 15px;
@@ -260,21 +286,14 @@ input {
 }
 
 .price button:hover {
-    background-color:green;
+    background-color: green;
 }
 
+/* Theme Toggle */
 .theme-toggle {
     position: absolute;
     top: 10px;
     right: 10px;
-}
-
-#theme-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
 }
 
 body.light-mode #theme-button {
@@ -286,29 +305,163 @@ body.dark-mode #theme-button {
     background: white;
     color: black;
 }
-.movie-details {
-    margin-bottom: 20px;
+
+/* Base styles (mobile first) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition: background 0.1s, color 0.1s;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #000428, #004e92);
+    color: white;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.movie-details,
+.tickets {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px ;
+    width: 100%;
 }
 
 .movie-details img {
-    width: 200px;
-    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 20px;
+    margin: 0 auto 20px;
+    display: block;
 }
 
-.movie-details div {
-    margin: 5px 0;
-    font-size: 1em;
+/* Other existing styles... */
+
+/* Responsive styles */
+
+/* Mobile (default) */
+.all-seats {
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
 }
 
-#movie-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+.dates-item {
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
 }
 
-#movie-runtime,
-#movie-genre,
-#movie-rating,
-#movie-language {
-    font-size: 1em;
-    color: #555;
+.time {
+    padding: 8px;
+    font-size: 12px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .movie-details,
+    .tickets {
+        margin: 20px;
+    }
+
+    .movie-details {
+        flex: 1;
+        max-width: 300px;
+    }
+
+    .tickets {
+        flex: 2;
+        max-width: 600px;
+    }
+
+    .all-seats {
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 12px;
+    }
+
+    .dates-item {
+        width: 60px;
+        height: 60px;
+        font-size: 14px;
+    }
+
+    .time {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+    .main {
+        justify-content: space-around;
+    }
+
+    .movie-details {
+        max-width: 350px;
+    }
+
+    .tickets {
+        max-width: 700px;
+    }
+
+    .all-seats {
+        grid-template-columns: repeat(10, 1fr);
+        grid-gap: 15px;
+    }
+
+    .dates-item {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .time {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .movie-details {
+        max-width: 400px;
+    }
+
+    .tickets {
+        max-width: 800px;
+    }
+
+    .all-seats {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .dates-item {
+        width: 80px;
+        height: 80px;
+    }
+
+    .time {
+        padding: 15px;
+    }
 }

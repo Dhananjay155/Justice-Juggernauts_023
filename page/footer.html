@@ -1,73 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Buff Footer</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
-    .footer {
-      background-color: #333;
-      color: lightgray;
-      padding: 20px;
-      text-align: center;
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Buff Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="../assets/icon-movie.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    .footer p {
-      margin: 5px 0;
-    }
+        .footer-container {
+            width: 100%;
+            background-color: #004080;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            bottom:0px;   
+        }
 
-    .social-icons a {
-      color: lightgray;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 20px;
-      transition: transform 0.3s ease-in-out;
-    }
+        .footer {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: left;
+        }
 
-    .social-icons a:hover {
-      transform: scale(1.2);
-      color: white;
-    }
+        .footer-section {
+            margin: 10px;
+        }
 
-    a {
-      color: lightgray;
-      margin: 0 10px;
-      transition: color 0.3s ease-in-out;
-    }
+        .footer-section h3 {
+            margin-top: 0;
+            color: white;
+        }
 
-    a:hover {
-      color: white;
-    }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: color 0.3s ease-in-out;
+        }
 
-      .social-icons a {
-        font-size: 16px;
-      }
-    
-  </style>
+        .footer a:hover {
+            color: #c0c0c0;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #c0c0c0;
+        }
+
+        .footer-bottom {
+            width: 100%;
+            margin-top: 20px;
+            border-top: 1px solid #c0c0c0;
+            padding-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom p {
+            margin: 5px 0;
+            justify-content: space-between;
+        }
+
+        .footer-bottom img {
+            width: 250px;
+            padding: 50px;
+        }
+
+        .legal {
+            text-align: center;
+        }
+
+        .legal a {
+            color: white;
+            margin: 2px 0;
+        }
+
+        .legal a:hover {
+            color: #c0c0c0;
+        }
+
+        .ending {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 1200px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .app-store img {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 10px;
+            }
+
+            .footer-section {
+                margin: 5px 0;
+            }
+
+            .footer-bottom img {
+                width: 200px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 10px;
+            }
+
+            .footer-section {
+                margin: 5px 0;
+            }
+
+            .footer-bottom img {
+                width: 150px;
+                padding: 10px;
+            }
+
+            .ending a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
-<body>
-  <div class="footer">
-    <p>© 2024 All rights reserved.</p>
-    <p>
-      <a href="#">Contact Us</a> |
-      <a href="#">Privacy Policy</a> |
-      <a href="#">Terms of Service</a>
-    </p>
-    <p>Follow us:</p>
-    <div class="social-icons">
-      <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
-      <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
-      <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
-      <a href="#" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
-      <a href="#" class="fab fa-youtube" aria-label="YouTube"></a>
-    </div>
-  </div>
 
+<body>
+    <footer class="footer-container">
+        <div class="footer">
+            <div class="footer-section">
+                <h3>Our Company</h3>
+                <a href="#">Investor Relations</a>
+                <a href="#">Press</a>
+                <a href="#">Careers</a>
+                <a href="#">Download Media Kit</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>More</h3>
+                <a href="#">Streaming & Consumer Technology</a>
+                <a href="#">IMAX Enhanced</a>
+                <a href="#">Exclusive Art</a>
+                <a href="#">Special Events</a>
+                <a href="#">Find A Theatre</a>
+                <a href="#">News</a>
+                <a href="#">Documentaries</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
+                    <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
+                    <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+                    <a href="#" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+                    <a href="#" class="fab fa-youtube" aria-label="YouTube"></a>
+                </div>
+            </div>
+            <div class="footer-section app-store">
+                <h3>Download Our App</h3>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Download on the App Store"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <img src="../assets/moviebuff logo.jpg" alt="IMAX Logo">
+            <div class="legal">
+                <p>MovieBuff® is a registered trademark of Moviebuff Corporation. © 2023 MovieBuff Corporation. All rights
+                    reserved.</p>
+                <p>TO THE MOVIEBUFF®, AT THE MOVIEBUFF®, MOVIES TO THE MOVIEBUFF®</p>
+                <div class="ending">
+                    <a href="#">Terms Of Use</a> |
+                    <a href="#">Privacy Policy</a> |
+                    <a href="#">Cookies Policy</a> |
+                    <a href="#">Privacy Settings</a> |
+                    <a href="#">Do Not Sell or Share My Information</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
