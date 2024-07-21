@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/payment.css">
-=======
-    <link rel="stylesheet" href="../css/styles.css">
->>>>>>> 6d8c7a28120ff1a559ee16b891a31985884a1592
     <link rel="icon" href="../assets/icon-movie.jpg">
-    <title>Payment</title>
 </head>
 <body>
 
 <div class="container">
+
     <div class="card-container">
+
         <div class="front">
             <div class="image">
                 <img src="../assets/chip.png" alt="">
@@ -32,12 +29,13 @@
                 <div class="box">
                     <span>expires</span>
                     <div class="expiration">
-                        <span class="exp-month">mm</span>
+                        <span class="exp-month">mm </span>
                         <span class="exp-year">yy</span>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="back">
             <div class="stripe"></div>
             <div class="box">
@@ -46,22 +44,23 @@
                 <img src="../assets/visa.png" alt="">
             </div>
         </div>
+
     </div>
 
-    <form id="payment-form">
+    <form id="payment-form" action="">
         <div class="inputBox">
             <span>card number</span>
-            <input type="text" maxlength="16" class="card-number-input" required>
+            <input type="text" maxlength="16" class="card-number-input">
         </div>
         <div class="inputBox">
             <span>card holder</span>
-            <input type="text" class="card-holder-input" required>
+            <input type="text" class="card-holder-input">
         </div>
         <div class="flexbox">
             <div class="inputBox">
                 <span>expiration mm</span>
-                <select class="month-input" required>
-                    <option value="" selected disabled>month</option>
+                <select name="" id="" class="month-input">
+                    <option value="month" selected disabled>month</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
                     <option value="03">03</option>
@@ -78,8 +77,8 @@
             </div>
             <div class="inputBox">
                 <span>expiration yy</span>
-                <select class="year-input" required>
-                    <option value="" selected disabled>year</option>
+                <select name="" id="" class="year-input">
+                    <option value="year" selected disabled>year</option>
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
                     <option value="2023">2023</option>
@@ -94,13 +93,13 @@
             </div>
             <div class="inputBox">
                 <span>cvv</span>
-                <input type="text" maxlength="4" class="cvv-input" required>
+                <input type="text" maxlength="4" class="cvv-input">
             </div>
         </div>
         <input type="submit" value="submit" class="submit-btn">
-        <div class="error-message" style="color: red; display: none;">Invalid input. Please check your details.</div>
     </form>
-</div>
+
+</div>    
 
 <script>
 document.querySelector('.card-number-input').oninput = () => {
@@ -133,27 +132,13 @@ document.querySelector('.cvv-input').oninput = () => {
     document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
 }
 
-document.getElementById('payment-form').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-
-    const cardNumber = document.querySelector('.card-number-input').value.trim();
-    const cardHolder = document.querySelector('.card-holder-input').value.trim();
-    const month = document.querySelector('.month-input').value;
-    const year = document.querySelector('.year-input').value;
-    const cvv = document.querySelector('.cvv-input').value.trim();
-
-    if (!cardNumber || !cardHolder || !month || !year || !cvv) {
-        document.querySelector('.error-message').style.display = 'block';
-    } else {
-        const bookingDetails = {
-            cardNumber: cardNumber.slice(-4),
-            cardHolder,
-            expiry: `${month}/${year}`
-        };
-        localStorage.setItem('paymentDetails', JSON.stringify(bookingDetails));
-        window.location.href = 'receipt.html'; 
-    }
-});
+document.querySelector('#payment-form').onsubmit = (event) => {
+    event.preventDefault();
+    alert('Payment successfully');
+    setTimeout(() => {
+        window.location.href = '../public/index.html';
+    }, 2000);
+}
 </script>
 </body>
 </html>

@@ -13,12 +13,10 @@
         ticket.addEventListener('change', updateTotal);
     });
 
-<<<<<<< HEAD
     document.getElementById('theme-button').addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         document.body.classList.toggle('light-mode');
     });
-=======
     document.getElementById('theme-button').addEventListener('click', toggleTheme);
 
     document.querySelector('button').addEventListener('click', () => {
@@ -39,7 +37,6 @@
 
         window.location.href = 'payment.html';
     });
-});
 
 function updateTotal() {
     const checkedTickets = document.querySelectorAll('input[name="tickets"]:checked');
@@ -53,4 +50,3 @@ function toggleTheme() {
     document.body.classList.toggle('dark-mode');
     document.body.classList.toggle('light-mode');
 }
->>>>>>> 6d8c7a28120ff1a559ee16b891a31985884a1592

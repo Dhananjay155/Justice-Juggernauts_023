@@ -15,7 +15,8 @@
 
 .container {
     min-height: 100vh;
-    background: #eee;
+    background: linear-gradient(120deg, #000428, #004e92);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,14 +25,13 @@
 }
 
 .container form {
-    background: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
     padding: 20px;
     width: 600px;
     padding-top: 160px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid #ccc;
 }
 
 .container form .inputBox {
@@ -176,4 +176,47 @@
 .container .card-container .back .box img {
     margin-top: 30px;
     height: 30px;
+}
+
+@media (max-width: 1200px) {
+    .container form {
+        width: 90%;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container form {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .container .card-container {
+        width: 100%;
+    }
+
+    .container .card-container .front .card-number-box,
+    .container .card-container .front .flexbox .box {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container form {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .container .card-container {
+        width: 100%;
+    }
+
+    .container .card-container .front .card-number-box,
+    .container .card-container .front .flexbox .box {
+        font-size: 16px;
+    }
+
+    .container .card-container .front .image img {
+        height: 40px;
+    }
 }

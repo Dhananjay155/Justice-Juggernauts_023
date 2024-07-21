@@ -5,13 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Ticket Booking</title>
-<<<<<<< HEAD
     <link rel="stylesheet" href="../css/seat.css">
-=======
-    <link rel="icon" href="../assets/icon-movie.jpg">
-
-    <link rel="stylesheet" href="../css/style.css">
->>>>>>> 6d8c7a28120ff1a559ee16b891a31985884a1592
     <script src="../src/seats.js" defer></script>
 </head>
 
@@ -35,13 +29,7 @@
                         <div class="item selected">Selected</div>
                     </div>
                     <div class="all-seats">
-<<<<<<< HEAD
                         <!-- Seats will be dynamically added here -->
-=======
-                        <input type="checkbox" name="tickets" id="s1">
-                        <label for="s1" class="seat"></label>
-                        <!-- More seats will be dynamically added here -->
->>>>>>> 6d8c7a28120ff1a559ee16b891a31985884a1592
                     </div>
                 </div>
                 <div class="screentext">All Eyes Here Please</div>
@@ -101,8 +89,7 @@
                     <div>₹ <div class="amount">0</div>
                     </div>
                 </div>
-<<<<<<< HEAD
-                <button type="button" onclick="location.href='http://127.0.0.1:5501/Justice-Juggernauts_023/page/payment.html?'">Book &  Pay</button>
+                <button type="button" onclick="location.href='http://127.0.0.1:5501/page/payment.html'">Book &  Pay</button>
             </div>
         </div>
     </div>
@@ -189,33 +176,6 @@ function generateSeats(rows, cols) {
     }
 }
 
-=======
-                <button type="button" id="bookPayButton">Book & Pay</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('bookPayButton').addEventListener('click', function() {
-            const selectedSeats = [...document.querySelectorAll('.seat')].filter(seat => seat.classList.contains('selected')).map(seat => seat.id);
-            const selectedDate = document.querySelector('input[name="date"]:checked').nextElementSibling.querySelector('.date').innerText;
-            const selectedTime = document.querySelector('input[name="time"]:checked').nextElementSibling.innerText;
-            const ticketCount = selectedSeats.length;
-            const totalAmount = ticketCount * 500; // Assume each ticket costs ₹500
-
-            const bookingDetails = {
-                seats: selectedSeats,
-                date: selectedDate,
-                time: selectedTime,
-                ticketCount,
-                totalAmount
-            };
-
-            localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
-            window.location.href = 'payment.html';
-        });
->>>>>>> 6d8c7a28120ff1a559ee16b891a31985884a1592
     </script>
 </body>
-
 </html>
