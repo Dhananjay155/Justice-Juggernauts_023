@@ -5,41 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieBuff</title>
-
     <link rel="icon" href="../assets/icon-movie.jpg">
-    <!-- <link rel="stylesheet" href="./style.css"> -->
+   
+    <!-- Css  -->
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../css/navsearch.css">
+    <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="../css/footer.css">
 
+
+    <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity=" sha512-iecdt]Lmaskl7CVkqkXNQ/ZH/XLIVWZOJyj7Yy7tcenmpD1ypAsozpnT/EøiPtmFIB46ZmdtAc9eNBvHøH/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- swiper css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+<link rel="stylesheet" href="../css/nav-srch.css">
 </head>
 
 <body>
     <!-- overlay -->
-     
+    <div class="overlay">
+        <i class="fa-solid fa-times" onclick="closeoverlay()"></i>
+        <div id="movie-trailer"></div>
+    </div>
 
+   <!-- head and nav -->
+    
+<!-- head -->
     <header class="header">
         <div class="logo">
-            <img src="../assets/icon-movie-removebg-preview.png" alt="logo">
+          <a href="./index.html">  <img src="../assets/icon-movie-removebg-preview.png" alt="logo"></a>
         </div>
         <nav>
-            <ul>
-                <div id="rtnav">
-
-
+            <div class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-links">
                     <li><a href="#">Tranding</a></li>
                     <li><a href="../page/movie.search.html">Movie</a></li>
-                    <li><a href="#">TV</a></li>
-                </div>
-                <div id="singup">
+                  <!-- search click to expand add later -->
                     <li>
                         <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                     </li>
+        
 
                     <li><a href="#"><span><i class="fa-solid fa-ticket"></i></span> Showtime</a></li>
 
@@ -49,14 +61,23 @@
                             <i class="fa-solid fa-user"></i>
                         </a>
                     </li>
-                </div>
+             
+                 <li>
+                    <a href="../page/signup.html">Sign Up</a>
+                 </li>
+                 <li>
+                    <a href="../page/login.html">Log In</a>
+                 </li>
 
             </ul>
         </nav>
 
     </header>
 
+<!-- container lading page  -->
+ <div id="container-landing">
 
+ 
     <!-- Banner -->
 
     <div class="banner">
@@ -82,30 +103,12 @@
                     <img src="../assets/hd-img/thor.jpg" alt="">
                 </div>
                 <div class="swiper-slide">
-                    <img src="../assets/hd-img/deadvsWol.jpg" alt="">
+                    <img src="../assets/hd-img/fury.jpg" alt="">
                 </div>
 
                 <div class="swiper-slide">
                     <img src="../assets/hd-img/venom.jpg" alt="">
                 </div>
-
-                <div class="swiper-slide">
-                    <img src="../assets/hd-img/loki2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                    <img src="../assets/hd-img/lion-king.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../assets/hd-img/kong.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../assets/hd-img/fury.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../assets/hd-img/joker.jpg" alt="">
-                </div>
-
 
             </div>
             
@@ -116,10 +119,10 @@
     <div class="content">
         <div class="title">
             <div id="title">
-                <h1>Movie Name</h1>
+                <h1>it end</h1>
             </div>
             <div id="sub-title">
-                <p>sub title</p>
+                <p>Horror-Drama-movie</p>
             </div>
             <div class="rating">
                 <i class="fa-solid fa-star"></i>
@@ -129,14 +132,14 @@
 
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
-                <span>6.483</span>
+                <span id= "ratings">8.483</span>
             </div>
             <div class="buttons">
                 <button class="btn-sec">
                     <i class="fa-solid fa-user"></i>
                     reviews
                 </button>
-                <button class="btn-sec">
+                <button class="btn-sec" onclick="showTrailer()">
                     <i class="fa-solid fa-play"></i>
                     trailer
                 </button>
@@ -150,64 +153,144 @@
             </div>
             <div id="desc">
                 <p>
+
                     Derry, Maine, October 1988
 
                     Bill Denbrough (Jaeden Lieberher) helps his little brother Georgie (Jackson Robert Scott) make a paper sailboat, calling it the S.S. Georgie. 
                     Georgie wants to go outside to sail it in the pouring rain, but Bill is too sick to join him. 
                     The brothers hug before Georgie runs out to play.
+                    The horror thriller “IT”, directed by Andrés Muschietti (“Mama”), is based on the hugely popular Stephen King novel of the same name, which has been terrifying readers for decades. When children begin to disappear in .
                 </p>
             </div>
             <button class="btn-primary">
                 <i class="fa-solid fa-cart-shopping"></i>
                 Watch Movie
             </button>
-            <!-- swiper pagination -->
-            <div class="swiper-pagination"></div>
-
+          
 
 
         </div>
+          <!-- swiper pagination -->
+  <div class="swiper-pagination"></div>
     </div>
+
 
     <!-- Movie Thumbs -->
 
     <div class="thumbs">
-        <div thumbsSlider="" class="swiper thumbsSwiper">
+        <div class="swiper thumbsSwiper">
             <div class="swiper-wrapper">
+
                 <div class="swiper-slide">
                     <img src="../assets/hd-img/it.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../assets/hd-img/joker.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../assets/hd-img/loki.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../assets/hd-img/lion-king.jpg" alt="">
                 </div>
                 <div class="swiper-slide">
                     <img src="../assets/hd-img/deadpool.jpg" alt="">
                 </div>
                 <div class="swiper-slide">
-                    <img src="../assets/hd-img/kong.jpg" alt="">
+                    <img src="../assets/loki-1.jpeg" alt="">
                 </div>
                 <div class="swiper-slide">
                     <img src="../assets/hd-img/spiderman.jpg" alt="">
                 </div>
+                <div class="swiper-slide">
+                    <img src="../assets/hd-img/thor1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../assets/hd-img/fury.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../assets/hd-img/venom.jpg" alt="">
+                </div>
+              
             </div>
         </div>
     </div>
 
 
+<!-- sliding banner  -->
+ 
 
-   
+
+
+</div>
+
+<!-- <br> <br><br> <br> -->
+<!-- Big card after landing page  -->
+<div class="card-container">
+    <div class="card left">
+        <img src="../assets/card1.png" alt="Movie 1">
+        <div class="card-content">
+            <h3>Watch Olympic Glory Together</h3>
+            <p>Experience the 2024 Paris Olympics on NBC at AMC Theatres! Watch NBC's daytime coverage and cheer with fellow fans. Don't miss the world's biggest games on the big screen from 7/26-8/11.</p>
+            <button>Get Tickets</button>
+        </div>
+    </div>
+    <div class="card right">
+        <img src="../assets/card2.png" alt="Movie 2">
+        <div class="card-content">
+            <h3>Embrace the Chase</h3>
+            <p>Experience a whirlwind of flavor when you order a TORNADO WRANGLER at MacGuffins Bar®! Enjoy the taste of Twisted Tea and Tito’s Vodka spun with a spritz of peach when you see TWISTERS, in theatres 7/19.</p>
+            <button>Get Tickets</button>
+        </div>
+    </div>
+    <div class="card left">
+        <img src="../assets/card3.png" alt="Movie 3">
+        <div class="card-content">
+            <h3>Sip Like a Supervillain</h3>
+            <p>Try a taste of despicably delicious flavors like Gru Blue Raspberry or Mega Jerry Red Cherry when you buy an ICEE© and get tickets to see DESPICABLE ME 4, now showing.</p>
+            <button>Get Tickets</button>
+        </div>
+    </div>
+    <div class="card right">
+        <img src="../assets/card4.png" alt="Movie 4">
+        <div class="card-content">
+            <h3>Why You Have To See Longlegs</h3>
+            <p>LONGLEGS has been recognized as an AMC Artisan Film. See if you might be able to brave the unsettling twists and turns in the horror movie with our guide.</p>
+            <button>Get Tickets</button>
+        </div>
+    </div>
+    <div class="card left">
+        <img src="../assets/card5.png" alt="Movie 5">
+        <div class="card-content">
+            <h3>Escape with Our Trap Sweepstakes</h3>
+            <p>Get tickets to see TRAP on the big screen 8/1/-8/4 and you could win a trip to Los Angeles with a premium escape room experience, a $500 gift card and more!</p>
+            <button>Get Tickets</button>
+        </div>
+    </div>
+    <div class="card right">
+        <img src="../assets/card6.png" alt="Movie 6">
+        <div class="card-content">
+            <h3>Movies Are Better with Rewards</h3>
+            <p>Enjoy Discount Tuesdays ticket savings, $5 rewards, free large popcorn refills, and many other valuable benefits. Become an AMC Stubs Insider™ now and make your next movie visit more rewarding.</p>
+            <button>join for FREE</button>
+        </div>
+    </div>
+</div>
+
 
 
     <!-- banner  -->
 
-
     <!-- footer  -->
+    <div class="footer">
+        <p>© 2024 All rights reserved.</p>
+        <p>
+          <a class="ft-a" href="#">Contact Us</a> |
+          <a class="ft-a" href="#">Privacy Policy</a> |
+          <a class="ft-a" href="#">Terms of Service</a>
+        </p>
+        <p>Follow us:</p>
+        <div class="social-icons">
+          <a  href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
+          <a  href="#" class="fab fa-twitter" aria-label="Twitter"></a>
+          <a  href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+          <a  href="#" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+          <a  href="#" class="fab fa-youtube" aria-label="YouTube"></a>
+        </div>
+      </div>
+
+<!-- code end here  Happy Coding ! -->
 
     <!-- swiper js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -215,6 +298,8 @@
     <!-- script Js -->
     <script src="../src/movie-data.js"></script>
     <script src="index.js"></script>
+     <!-- <script src="../src/app.js"></script> -->
+      <script src="../src/Bigcard.js"></script>
 
 </body>
 
