@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Receipt</title>
+    <link rel="stylesheet" href="../css/receipt.css">
+    <link rel="icon" href="../assets/icon-movie.jpg">
+</head>
+<body>
+    <div class="container">
+        <div class="receipt">
+            <h1>Movie Ticket Receipt</h1>
+            <div class="details">
+                <p>Date: <span id="bookingDate"></span></p>
+                <p>Time: <span id="bookingTime"></span></p>
+                <p>Seats: <span id="bookingSeats"></span></p>
+                <p>Number of Tickets: <span id="ticketCount"></span></p>
+                <p>Total Amount: ₹<span id="totalAmount"></span></p>
+            </div>
+            <div class="payment-info">
+                <h2>Payment Information</h2>
+                <p>Card Number: **** **** **** <span id="cardNumber"></span></p>
+                <p>Card Holder: <span id="cardHolder"></span></p>
+                <p>Expiry: <span id="cardExpiry"></span></p>
+            </div>
+            <p class="thank-you">Thank you for your purchase!</p>
+            <button onclick="window.print()">Print Receipt</button>
+            <button onclick="location.href='../public/index.html'">Book Another Movie</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
+            if (bookingDetails) {
+                document.getElementById('bookingDate').innerText = bookingDetails.date;
+                document.getElementById('bookingTime').innerText = bookingDetails.time;
+                document.getElementById('bookingSeats').innerText = bookingDetails.seats.join(', ');
+                document.getElementById('ticketCount').innerText = bookingDetails.ticketCount;
+                document.getElementById('totalAmount').innerText = bookingDetails.totalAmount;
+            }
+
+            const paymentDetails = JSON.parse(localStorage.getItem('paymentDetails'));
+            if (paymentDetails) {
+                document.getElementById('cardNumber').innerText = paymentDetails.cardNumber;
+                document.getElementById('cardHolder').innerText = paymentDetails.cardHolder;
+                document.getElementById('cardExpiry').innerText = paymentDetails.expiry;
+            }
+        });
+    </script>
+</body>
+</html>

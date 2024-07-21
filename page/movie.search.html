@@ -260,17 +260,7 @@
                     const language = document.createElement('p');
                     language.innerHTML = `<b>Language:</b> ${details.Language}`;
 
-                    // const bookButton = document.createElement('button');
-                    // const bookLink = document.createElement('a');
-                    // bookLink.innerText = "Book Ticket";
-                    // bookLink.href = "../page/seat.html";
 
-                    // bookLink.addEventListener('click', (event) => {
-                    //     event.preventDefault(); 
-                    //     alert(`Bill for ${details.Title}`);
-                    // });
-
-                    // bookButton.appendChild(bookLink);
                     const bookButton = document.createElement('button');
                     bookButton.innerText = "Book Ticket";
                     bookButton.addEventListener('click', () => {
@@ -279,7 +269,7 @@
                         window.location.href = `../page/seat.html?movieID=${details.imdbID}&title=${encodeURIComponent(details.Title)}&poster=${encodeURIComponent(details.Poster)}&runtime=${encodeURIComponent(details.Runtime)}&genre=${encodeURIComponent(details.Genre)}&rating=${encodeURIComponent(details.imdbRating)}&language=${encodeURIComponent(details.Language)}`;
 
 
-        });
+                    });
 
 
 
@@ -312,8 +302,68 @@
                     }
                 });
 
+                const fetchMovieDetails = async (movieID) => {
+                    const URL = `https://www.omdbapi.com/?apikey=1e16119&i=${movieID}`;
+                    const res = await fetch(URL);
+                    const data = await res.json();
+                    return data;
+                };
+
+                const handleSearchInput = async () => {
+                    currentPage = 1;
+                    fetchMovies(searchBox.value, currentPage);
+                };
+
+                const showData = async (movies) => {
+                    container.innerHTML = "";
+                    for (const movie of movies) {
+                        const details = await fetchMovieDetails(movie.imdbID);
+
+                        const card = document.createElement("div");
+                        card.classList.add("card");
+
+                        const title = document.createElement("p");
+                        title.innerHTML = `<b>Title:</b> ${details.Title}`;
+
+                        const poster = document.createElement('img');
+                        poster.src = details.Poster !== "N/A" ? details.Poster : "https://via.placeholder.com/150";
+
+                        const runtime = document.createElement('p');
+                        runtime.innerHTML = `<b>Runtime:</b> ${details.Runtime}`;
+
+                        const genre = document.createElement('p');
+                        genre.innerHTML = `<b>Genre:</b> ${details.Genre}`;
+
+                        const rating = document.createElement('p');
+                        rating.innerHTML = `<b>Rating:</b> ${details.imdbRating}`;
+
+                        const language = document.createElement('p');
+                        language.innerHTML = `<b>Language:</b> ${details.Language}`;
+
+                        const bookButton = document.createElement('button');
+                        bookButton.innerText = "Book Ticket";
+                        bookButton.addEventListener('click', () => {
+                            // Redirect to booking page with movie details as query parameters
+                            window.location.href = `../page/seat.html?movieID=${details.imdbID}&title=${encodeURIComponent(details.Title)}&poster=${encodeURIComponent(details.Poster)}&runtime=${encodeURIComponent(details.Runtime)}&genre=${encodeURIComponent(details.Genre)}&rating=${encodeURIComponent(details.imdbRating)}&language=${encodeURIComponent(details.Language)}`;
+
+
+                        });
+
+                        card.append(poster, title, runtime, genre, rating, language, bookButton);
+                        container.append(card);
+                    }
+                };
+                const bookButton = document.createElement('button');
+                bookButton.innerText = "Book Ticket";
+                bookButton.addEventListener('click', () => {
+                    location.href = 'seat.html';
+                    alert(`Bill for ${details.Title}`);
+                });
+
+
+
                 const pageInfo = document.createElement("span");
-                pageInfo.innerText = `Page ${ currentPage } of ${ totalPages }`;
+                pageInfo.innerText = `Page ${currentPage} of ${totalPages}`;
 
                 pagination.append(prevButton, pageInfo, nextButton);
             };

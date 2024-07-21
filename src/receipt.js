@@ -1,4 +1,4 @@
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const seats = document.querySelector('.all-seats');
     for (let i = 0; i < 59; i++) {
         const isBooked = Math.random() < 0.5 ? 'booked' : '';
@@ -13,10 +13,6 @@
         ticket.addEventListener('change', updateTotal);
     });
 
-    document.getElementById('theme-button').addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        document.body.classList.toggle('light-mode');
-    });
     document.getElementById('theme-button').addEventListener('click', toggleTheme);
 
     document.querySelector('button').addEventListener('click', () => {
@@ -37,6 +33,7 @@
 
         window.location.href = 'payment.html';
     });
+});
 
 function updateTotal() {
     const checkedTickets = document.querySelectorAll('input[name="tickets"]:checked');
