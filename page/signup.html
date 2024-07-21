@@ -273,7 +273,8 @@
 
         if (userExists) {
           alert("User already exists. Please login to your account.");
-          window.location.href = "login.html";
+          window.location.href = "./login.html";
+          
         } else {
           const saveUserRes = await fetch("http://localhost:4000/users", {
             method: "POST",
@@ -286,7 +287,7 @@
           if (!saveUserRes.ok) throw new Error("Failed to save user");
 
           alert("Signup successful. Redirecting to login page.");
-          window.location.href = "login.html";
+          window.location.href = "./login.html";
         }
       } catch (error) {
         console.error("Error:", error);
@@ -297,7 +298,7 @@
     submitForm.addEventListener("submit", handleSubmit);
 
     document.getElementById("loginButton").addEventListener("click", () => {
-      window.location.href = "login.html";
+      window.location.href = "./login.html";
     });
     
 // nav active

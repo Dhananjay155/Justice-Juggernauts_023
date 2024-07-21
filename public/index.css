@@ -100,7 +100,7 @@ a:hover {
 }
 
 .logo img {
-    height: 50px;
+    height: 70px;
 }
  /* Styles for the toggle button */
  .toggle-button {
@@ -435,22 +435,22 @@ z-index: -1;
 /* adding annimation for thumb */
 
 .thumbs .swiper-wapper .swiper-slide:nth-child(1){
-    animation: slideleft .5s ease-in-out;
+    animation: slideleft .5s infinite;
 }
 .thumbs .swiper-wapper .swiper-slide:nth-child(2){
-    animation: slideleft 1.5s ease-in-out;
+    animation: slideleft 1.5s infinite;
     animation-delay: -0.7s;
 }
 .thumbs .swiper-wapper .swiper-slide:nth-child(3){
-    animation: slideleft 1.5s ease-in-out;
+    animation: slideleft 1.5s infinite;
     animation-delay: -0.7s;
 }
 .thumbs .swiper-wapper .swiper-slide:nth-child(4){
-    animation: slideleft 1.5s ease-in-out;
+    animation: slideleft 1.5s infinite;
     animation-delay: -0.3s;
 }
 .thumbs .swiper-wapper .swiper-slide:nth-child(5){
-    animation: slideleft 1.5s ease-in-out;
+    animation: slideleft 1.5s infinite;
     animation-delay: -0.1s;
 }
 
