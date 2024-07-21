@@ -6,14 +6,11 @@
     <title>Movie Ticket Booking</title>
     <link rel="icon" href="../assets/icon-movie.jpg">
 
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./src/seats.js" defer></script>
-    <script src="./payment.html"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../src/seats.js" defer></script>
 </head>
 <body>
-    <div class="theme-toggle">
-        <button id="theme-button">Toggle Theme</button>
-    </div>
+    
     <div class="main">
         <div class="tickets">
             <div class="ticket-selector">
@@ -25,7 +22,7 @@
                     </div>
                     <div class="all-seats">
                         <input type="checkbox" name="tickets" id="s1">
-                        <label for="s1" class="seat booked"></label>
+                        <label for="s1" class="seat"></label>
                         <!-- More seats will be dynamically added here -->
                     </div>
                 </div>
@@ -86,9 +83,30 @@
                     <div>₹ <div class="amount">0</div>
                     </div>
                 </div>
-                <button type="button" onclick="location.href='http://127.0.0.1:5500/Justice-Juggernauts_023/payment.html'">Book & Pay </button>
+                <button type="button" id="bookPayButton">Book & Pay</button>
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('bookPayButton').addEventListener('click', function() {
+            const selectedSeats = [...document.querySelectorAll('.seat')].filter(seat => seat.classList.contains('selected')).map(seat => seat.id);
+            const selectedDate = document.querySelector('input[name="date"]:checked').nextElementSibling.querySelector('.date').innerText;
+            const selectedTime = document.querySelector('input[name="time"]:checked').nextElementSibling.innerText;
+            const ticketCount = selectedSeats.length;
+            const totalAmount = ticketCount * 500; // Assume each ticket costs ₹500
+
+            const bookingDetails = {
+                seats: selectedSeats,
+                date: selectedDate,
+                time: selectedTime,
+                ticketCount,
+                totalAmount
+            };
+
+            localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
+            window.location.href = 'payment.html';
+        });
+    </script>
 </body>
 </html>
