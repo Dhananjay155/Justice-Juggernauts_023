@@ -21,6 +21,48 @@ Keep track of your ticket count and total cost, and complete your booking with a
 ------------------------------------ PROJECT ------------------------------------------------
 MOVIE BOOKING SYSTEM
 - **Link:** [MOVIE BOOKING SYSTEM] (deploy link paste)
+- **Directory Structure:**
+
+   <pre>
+  Justice-Juggernauts_023
+│
+├── assets
+│   ├── checking
+│   │   ├── in.html
+│   │   ├── nav.html
+│
+├── css
+│   ├── card.css
+│   ├── footer.css
+│   ├── movie_search.css
+│   ├── navbar.css
+│   ├── payment.css
+│   ├── seat.css
+│
+├── page
+│   ├── card.html
+│   ├── footer.html
+│   ├── login.html
+│   ├── movie_search.html
+│   ├── payment.html
+│   ├── seat.html
+│   ├── signup.html
+│
+├── public
+│   ├── index.css
+│   ├── index.html
+│   ├── index.js
+│
+├── Src
+│   ├── Bigcards.js
+│   ├── movie-data.js
+│   ├── seats.js
+│
+├── db.json
+├── package.json
+├── README.md
+
+</pre>
 
 
 Some of the glimpses of our work
