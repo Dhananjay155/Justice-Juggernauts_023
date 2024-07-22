@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Ticket Booking</title>
-    <link rel="icon" href="../assets/icon-movie.jpg">
-
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/seat.css">
     <script src="../src/seats.js" defer></script>
 </head>
+
 <body>
     
     <div class="main">
+        <div class="movie-details" >
+            <img id="movie-poster" src="" alt="Movie Poster" >
+            <h2 id="movie-title"></h2>
+            <p id="movie-runtime"></p>
+            <p id="movie-genre"></p>
+            <p id="movie-rating"></p>
+            <p id="movie-language"></p>
+        </div>
         <div class="tickets">
             <div class="ticket-selector">
                 <div class="seats">
                     <div class="status">
-                        <div class="item">Available</div>
-                        <div class="item">Booked</div>
-                        <div class="item">Selected</div>
+                        <div class="item available">Available</div>
+                        <div class="item booked">Booked</div>
+                        <div class="item selected">Selected</div>
                     </div>
                     <div class="all-seats">
-                        <input type="checkbox" name="tickets" id="s1">
-                        <label for="s1" class="seat"></label>
-                        <!-- More seats will be dynamically added here -->
+                        <!-- Seats will be dynamically added here -->
                     </div>
                 </div>
                 <div class="screentext">All Eyes Here Please</div>
@@ -83,30 +89,93 @@
                     <div>₹ <div class="amount">0</div>
                     </div>
                 </div>
-                <button type="button" id="bookPayButton">Book & Pay</button>
+                <button type="button" onclick="location.href='http://127.0.0.1:5501/page/payment.html'">Book &  Pay</button>
             </div>
         </div>
     </div>
-
     <script>
-        document.getElementById('bookPayButton').addEventListener('click', function() {
-            const selectedSeats = [...document.querySelectorAll('.seat')].filter(seat => seat.classList.contains('selected')).map(seat => seat.id);
-            const selectedDate = document.querySelector('input[name="date"]:checked').nextElementSibling.querySelector('.date').innerText;
-            const selectedTime = document.querySelector('input[name="time"]:checked').nextElementSibling.innerText;
-            const ticketCount = selectedSeats.length;
-            const totalAmount = ticketCount * 500; // Assume each ticket costs ₹500
+        document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
 
-            const bookingDetails = {
-                seats: selectedSeats,
-                date: selectedDate,
-                time: selectedTime,
-                ticketCount,
-                totalAmount
-            };
+    // Retrieve movie details from URL parameters
+    const movieTitle = urlParams.get('title') || "Title Not Available";
+    const moviePoster = urlParams.get('poster') || "https://via.placeholder.com/150";
+    const movieRuntime = urlParams.get('runtime') || "Runtime Not Available";
+    const movieGenre = urlParams.get('genre') || "Genre Not Available";
+    const movieRating = urlParams.get('rating') || "Rating Not Available";
+    const movieLanguage = urlParams.get('language') || "Language Not Available";
 
-            localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
-            window.location.href = 'payment.html';
+    // Update the HTML with movie details
+    document.getElementById('movie-title').innerText = movieTitle;
+    document.getElementById('movie-poster').src = moviePoster;
+    document.getElementById('movie-runtime').innerText = `Runtime: ${movieRuntime}`;
+    document.getElementById('movie-genre').innerText = `Genre: ${movieGenre}`;
+    document.getElementById('movie-rating').innerText = `Rating: ${movieRating}`;
+    document.getElementById('movie-language').innerText = `Language: ${movieLanguage}`;
+
+    // Generate seats dynamically
+    generateSeats(5, 10); // 5 rows, 10 columns
+
+    // Handle seat selection and update count and amount
+    const tickets = document.querySelectorAll('.all-seats .seat');
+    tickets.forEach(ticket => {
+        ticket.addEventListener('change', () => {
+            let amount = parseInt(document.querySelector('.amount').textContent);
+            let count = parseInt(document.querySelector('.count').textContent);
+
+            if (ticket.checked) {
+                count += 1;
+                amount += 200; // Assuming each ticket costs 200
+            } else {
+                count -= 1;
+                amount -= 200;
+            }
+            document.querySelector('.amount').textContent = amount;
+            document.querySelector('.count').textContent = count;
         });
+    });
+
+    // Toggle theme button
+    document.getElementById('theme-button').addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        document.body.classList.toggle('light-mode');
+    });
+});
+
+function generateSeats(rows, cols) {
+    const container = document.querySelector('.all-seats');
+    
+    for (let row = 1; row <= rows; row++) {
+        const rowDiv = document.createElement('div');
+        rowDiv.classList.add('row');
+        
+        const rowLabel = document.createElement('div');
+        rowLabel.classList.add('row-label');
+        rowLabel.innerText = `Row ${row}`;
+        rowDiv.appendChild(rowLabel);
+        
+        for (let col = 1; col <= cols; col++) {
+            const seatID = `s${(row - 1) * cols + col}`;
+            const isBooked = Math.random() < 0.5 ? 'booked' : '';
+            
+            const seat = document.createElement('input');
+            seat.type = 'checkbox';
+            seat.name = 'tickets';
+            seat.id = seatID;
+            seat.classList.add('seat', isBooked);
+            
+            const seatLabel = document.createElement('label');
+            seatLabel.htmlFor = seatID;
+            seatLabel.classList.add('seat-label');
+            seatLabel.innerText = col;
+            
+            rowDiv.appendChild(seat);
+            rowDiv.appendChild(seatLabel);
+        }
+        container.appendChild(rowDiv);
+    }
+}
+
     </script>
 </body>
 </html>

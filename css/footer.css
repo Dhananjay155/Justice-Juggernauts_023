@@ -1,46 +1,170 @@
 /* footer css */
 
- .footer {
-  background-color: #333;
-  color: lightgray;
-  padding: 20px;
-  text-align: center;
-  /* position: fixed; */
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-.footer p {
-  margin: 5px 0;
-}
+        .footer-container {
+            width: 100%;
+            background-color: #004080;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* position: fixed; */
+            bottom: 0px;
+        }
 
-.social-icons .fab {
-  color: lightgray;
-  text-decoration: none;
-  margin: 0 10px;
-  font-size: 20px;
-  transition: transform 0.3s ease-in-out;
-}
+        .footer {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+        .footer-bottom img{
+          
+        }
 
-.social-icons a:hover {
-  transform: scale(1.2);
-  color: white;
-}
+        .footer-section {
+            margin: 10px;
+        }
 
-.ft-a{
-  color: lightgray;
-  margin: 0 10px;
-  transition: color 0.3s ease-in-out;
-}
+        .footer-section h3 {
+            margin-top: 0;
+            color: white;
+        }
 
+        .footer a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: color 0.3s ease-in-out;
+        }
 
- .ft-a:hover{
-    color: white;
-    /* background-color: pink; */
- }
+        .footer a:hover {
+            color: #c0c0c0;
+        }
 
-  .social-icons a {
-    font-size: 16px;
-  }
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
 
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #c0c0c0;
+        }
+
+        .footer-bottom {
+            width: 100%;
+            margin-top: 20px;
+            border-top: 1px solid #c0c0c0;
+            padding-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom p {
+            margin: 5px 0;
+            justify-content: space-between;
+        }
+
+        .footer-bottom img {
+            width: 250px;
+            padding: 50px;
+        }
+
+        .legal {
+            text-align: center;
+        }
+
+        .legal a {
+            color: white;
+            text-decoration: none;
+            margin: 2px 0;
+        }
+
+        .legal a:hover {
+            color: #c0c0c0;
+        }
+
+        .ending {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 1200px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+                
+            }
+
+            .app-store img {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 10px;
+            }
+
+            .footer-section {
+                margin: 5px 0;
+            }
+
+            .footer-bottom img {
+                width: 200px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 10px;
+            }
+
+            .footer-section {
+                margin: 5px 0;
+            }
+
+            .footer-bottom img {
+                width: 150px;
+                padding: 10px;
+            }
+
+            .ending a {
+                display: block;
+                margin: 5px 0;
+                padding: 10px;
+                text-decoration: none;
+            }
+        }
+        .social-icons a{
+          margin-right: 30px;
+        }
+    
