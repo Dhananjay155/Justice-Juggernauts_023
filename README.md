@@ -96,21 +96,45 @@ Some of the glimpses of our work
 
 <h1>Login Page </h1> 
 
+1. Log in: Users can log in to the website by entering their username and password.
+2. Forgot password: If users forget their password, they can click on the "Forgot Password?" link to reset it.
+3. User accounts: The website appears to have user accounts, as there are fields for username and password.
+
 ![assets/Screenshot 2024-07-22 121741.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121741.png)
 
 <h1>Movie Search Page </h1> 
+
+1. Browse movies: The website allows users to browse movies by displaying a list of movie titles, runtime, genre, and ratings.
+2. View movie details: Clicking on a movie title likely takes the user to a page with more information about that movie.
+3. Book tickets: There is a button labeled "Book Ticket" next to each movie title, which suggests that users can purchase tickets to see the movies.
+4. Login/Signup: Users can log in to an existing account or sign up for a new account.
 
 ![assets/Screenshot 2024-07-22 121807.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121807.png)
 
 <h1>Ticket Booking Page </h1> 
 
+1. Browse showtimes: The website allows users to browse showtimes for a movie by displaying dates and available times.
+2. Select seats: Users can select their seats from a grid for a particular showtime.
+3. View details: Clicking on the movie title likely takes the user to a page with more information about the movie.
+4. Book tickets: Clicking on a showtime allows users to book tickets for that time.
+
 ![assets/Screenshot 2024-07-22 121831.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121831.png)
 
 <h1>Payment Page </h1> 
 
+1. Make payments: You can use a credit card to make payments for goods and services at stores and online.
+2. Build credit: Using and paying off your credit card balance on time can help you build a good credit history.
+3. Earn rewards: Many credit cards offer rewards programs that allow you to earn points or cash back on your purchases.
+4. Purchase protection: Some credit cards offer purchase protection, which can help you get a refund if an item you buy is damaged or stolen.
+5. Security: Credit cards use fraud protection features to help keep your account safe.
+
 ![assets/Screenshot 2024-07-22 121848.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121848.png)
 
 <h1>Footer Page </h1> 
+
+1. Browse movies: Users can browse movies by title, showtime, genre, and other criteria.
+2. View movie details: Clicking on a movie title takes the user to a page with more information about the movie, including cast, synopsis, and trailers.
+3. Book tickets: Users can book tickets for upcoming movie showtimes by selecting their seats and completing a purchase.
 
 ![assets/Screenshot 2024-07-22 121926.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121926.png)
 
@@ -122,7 +146,7 @@ Running the project
 <hr/>
 <br/>
 
-### run json
+### run json server
 
 json-server --watch --port 4000 db.json 
 
