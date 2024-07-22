@@ -239,6 +239,7 @@
         bookButton.innerText = "Book Ticket";
         bookButton.addEventListener('click', () => {
             // Redirect to booking page with movie details as query parameters
+            alert(`Bill for ${details.Title}`);
             window.location.href = `../page/seat.html?movieID=${details.imdbID}&title=${encodeURIComponent(details.Title)}&poster=${encodeURIComponent(details.Poster)}&runtime=${encodeURIComponent(details.Runtime)}&genre=${encodeURIComponent(details.Genre)}&rating=${encodeURIComponent(details.imdbRating)}&language=${encodeURIComponent(details.Language)}`;
 
 
