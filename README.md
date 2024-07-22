@@ -18,13 +18,13 @@ Keep track of your ticket count and total cost, and complete your booking with a
 
 
 
------------------------------------- PROJECT ------------------------------------------------
+------------------------------------ PROJECT ------------------------------------------------------
 MOVIE BOOKING SYSTEM
 - **Link:** [MOVIE BOOKING SYSTEM] (deploy link paste)
 - **Directory Structure:**
 
   ## Directory Structure
-```plaintext
+```
 Justice-Juggernauts_023/
 │
 ├── assets
@@ -61,19 +61,5 @@ Justice-Juggernauts_023/
 │
 ├── db.json
 ├── package.json
-├── README.md
+├── README.md```
 
-Some of the glimpses of our work
-
-photo...ss
-
-
-
-
-Running the project
-<hr/>
-<br/>
-
-### run json
-
-json-server --watch --port 4000 db.json 
