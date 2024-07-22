@@ -1,12 +1,12 @@
 # Justice-Juggernauts_023
 
--------------------------------------------------------------- INTRODUCTION -----------------------------------------------
+--------------------------------------------------------- INTRODUCTION ----------------------------------------------------
 
 Welcome to our Movie Ticket Booking System! Effortlessly browse movie details, including posters, runtime, genre, and ratings. 
 Select your preferred showtimes and choose seats dynamically displayed in real-time. 
 Keep track of your ticket count and total cost, and complete your booking with a seamless payment button.
 
------------------------------------------------------ TEAM MEMBERS ------------------------------------------------
+--------------------------------------------------------- TEAM MEMBERS ------------------------------------------------
 
 1.) Nikhil <a href="https://github.com/Niks-World"> Github profile <a/>
 
@@ -18,7 +18,7 @@ Keep track of your ticket count and total cost, and complete your booking with a
 
 
 
--------------------------------------------------------- PROJECT ------------------------------------------------------
+------------------------------------------------------------- PROJECT ------------------------------------------------------
 
 MOVIE BOOKING SYSTEM
 - **Link:** [MOVIE BOOKING SYSTEM] (deploy link paste)
