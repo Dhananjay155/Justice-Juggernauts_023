@@ -334,68 +334,61 @@
                         const genre = document.createElement('p');
                         genre.innerHTML = `<b>Genre:</b> ${details.Genre}`;
 
-<<<<<<< HEAD
-        const bookButton = document.createElement('button');
-        bookButton.innerText = "Book Ticket";
-        bookButton.addEventListener('click', () => {
-            // Redirect to booking page with movie details as query parameters
-            alert(`Bill for ${details.Title}`);
-            window.location.href = `../page/seat.html?movieID=${details.imdbID}&title=${encodeURIComponent(details.Title)}&poster=${encodeURIComponent(details.Poster)}&runtime=${encodeURIComponent(details.Runtime)}&genre=${encodeURIComponent(details.Genre)}&rating=${encodeURIComponent(details.imdbRating)}&language=${encodeURIComponent(details.Language)}`;
-=======
-                        const rating = document.createElement('p');
-                        rating.innerHTML = `<b>Rating:</b> ${details.imdbRating}`;
+                        
+                            const rating = document.createElement('p');
+                            rating.innerHTML = `<b>Rating:</b> ${details.imdbRating}`;
 
-                        const language = document.createElement('p');
-                        language.innerHTML = `<b>Language:</b> ${details.Language}`;
+                            const language = document.createElement('p');
+                            language.innerHTML = `<b>Language:</b> ${details.Language}`;
 
-                        const bookButton = document.createElement('button');
+                            const bookButton = document.createElement('button');
                         bookButton.innerText = "Book Ticket";
                         bookButton.addEventListener('click', () => {
                             // Redirect to booking page with movie details as query parameters
+                            alert(`Bill for ${details.Title}`);
                             window.location.href = `../page/seat.html?movieID=${details.imdbID}&title=${encodeURIComponent(details.Title)}&poster=${encodeURIComponent(details.Poster)}&runtime=${encodeURIComponent(details.Runtime)}&genre=${encodeURIComponent(details.Genre)}&rating=${encodeURIComponent(details.imdbRating)}&language=${encodeURIComponent(details.Language)}`;
->>>>>>> f9172305f3a2ccc841f0cf2ea0eb488b8a6d6ea5
 
 
-                        });
+                            });
 
-                        card.append(poster, title, runtime, genre, rating, language, bookButton);
-                        container.append(card);
-                    }
+                            card.append(poster, title, runtime, genre, rating, language, bookButton);
+                            container.append(card);
+                        }
                 };
-                const bookButton = document.createElement('button');
-                bookButton.innerText = "Book Ticket";
-                bookButton.addEventListener('click', () => {
-                    location.href = 'seat.html';
-                    alert(`Bill for ${details.Title}`);
+                    const bookButton = document.createElement('button');
+                    bookButton.innerText = "Book Ticket";
+                    bookButton.addEventListener('click', () => {
+                        location.href = 'seat.html';
+                        alert(`Bill for ${details.Title}`);
+                    });
+
+
+
+                    const pageInfo = document.createElement("span");
+                    pageInfo.innerText = `Page ${currentPage} of ${totalPages}`;
+
+                    pagination.append(prevButton, pageInfo, nextButton);
+                };
+
+                const debounce = (fn, delay) => {
+                    return (...args) => {
+                        if (timeoutID) {
+                            clearTimeout(timeoutID);
+                        }
+                        timeoutID = setTimeout(() => {
+                            fn(...args);
+                        }, delay);
+                    };
+                };
+
+                searchBox.addEventListener('input', debounce(handleSearchInput, 1000));
+
+                // Clear button functionality
+                clearButton.addEventListener('click', () => {
+                    searchBox.value = ""; // Clear the input
+                    currentPage = 1; // Reset to first page
+                    fetchMovies(); // Fetch default movies
                 });
-
-
-
-                const pageInfo = document.createElement("span");
-                pageInfo.innerText = `Page ${currentPage} of ${totalPages}`;
-
-                pagination.append(prevButton, pageInfo, nextButton);
-            };
-
-            const debounce = (fn, delay) => {
-                return (...args) => {
-                    if (timeoutID) {
-                        clearTimeout(timeoutID);
-                    }
-                    timeoutID = setTimeout(() => {
-                        fn(...args);
-                    }, delay);
-                };
-            };
-
-            searchBox.addEventListener('input', debounce(handleSearchInput, 1000));
-
-            // Clear button functionality
-            clearButton.addEventListener('click', () => {
-                searchBox.value = ""; // Clear the input
-                currentPage = 1; // Reset to first page
-                fetchMovies(); // Fetch default movies
-            });
         </script>
         <script src="../public/index.js"></script>
 </body>
