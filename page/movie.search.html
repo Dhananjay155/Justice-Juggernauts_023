@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Search and Pagination</title>
     <link rel="stylesheet" href="../css/movie-srch.css">
 
-  <!-- For FontAwesome icons -->
+    <!-- For FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity=" sha512-iecdt]Lmaskl7CVkqkXNQ/ZH/XLIVWZOJyj7Yy7tcenmpD1ypAsozpnT/EøiPtmFIB46ZmdtAc9eNBvHøH/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        integrity=" sha512-iecdt]Lmaskl7CVkqkXNQ/ZH/XLIVWZOJyj7Yy7tcenmpD1ypAsozpnT/EøiPtmFIB46ZmdtAc9eNBvHøH/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <style>
         /* start hiren code */
@@ -21,16 +22,23 @@
             background: linear-gradient(120deg, #000428, #004e92);
             color: white;
         }
+
+        a {
+            text-decoration: none;
+        }
+
         .container {
             max-width: 1350px;
             margin: auto;
             padding: 20px;
         }
+
         #searchContainer {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
         }
+
         #searchBox {
             padding: 10px;
             width: 100%;
@@ -39,6 +47,7 @@
             border: none;
             outline: none;
         }
+
         #clearButton {
             padding: 10px;
             background-color: #dc3545;
@@ -47,12 +56,14 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         #container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
             /* background: black; */
         }
+
         .card {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 10px;
@@ -61,12 +72,14 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
+
         .card img {
             width: 100%;
             height: 300px;
             object-fit: cover;
             border-radius: 5px;
         }
+
         .card button {
             margin-top: 10px;
             padding: 10px;
@@ -76,13 +89,16 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         .card button:hover {
             background-color: #0056b3;
         }
+
         #pagination {
             margin-top: 20px;
             text-align: center;
         }
+
         #pagination button {
             padding: 10px 20px;
             margin: 0 5px;
@@ -92,68 +108,77 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         #pagination button:hover {
             background-color: #0056b3;
         }
+
         #pagination span {
             margin: 0 10px;
         }
+
         @media (max-width: 768px) {
             #container {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
         @media (max-width: 480px) {
             #container {
                 grid-template-columns: 1fr;
             }
         }
+
         /* end hiren code */
     </style>
 </head>
+
 <body>
-      <!-- head -->
-  <header class="header">
-    <div class="logo">
-      <a href="../public/index.html">  <img src="../assets/icon-movie-removebg-preview.png" alt="logo"></a>
+    <!-- head -->
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <a href="../public/index.html"> <img src="../assets/icon-movie-removebg-preview.png" alt="logo"></a>
+            </div>
+            <nav>
+                <div class="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar-links">
+                    <li><a href="../public/index.html"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="../page/movie.search.html">Movie</a></li>
+                    <!-- search click to expand add later -->
+                    <!--<li> <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a> --></li>
+
+
+                    <!-- <li><a href="#"><span><i class="fa-solid fa-ticket"></i></span> Showtime</a></li> -->
+
+
+                    <li>
+                        <a href="../page/signup.html">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../page/signup.html">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="../page/login.html">Log In</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </header>
     </div>
-    <nav>
-        <div class="toggle-button">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <ul class="navbar-links">
-            <li><a href="../public/index.html"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-                <li><a href="#">Tranding</a></li>
-                <li><a href="../page/movie.search.html">Movie</a></li>
-              <!-- search click to expand add later -->
-                 <!--<li> <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a> --></li>
-    
-
-                <!-- <li><a href="#"><span><i class="fa-solid fa-ticket"></i></span> Showtime</a></li> -->
 
 
-                <li>
-                    <a href="../page/signup.html">
-                        <i class="fa-solid fa-user"></i>
-                    </a>
-                </li>
-         
-             <li>
-                <a href="../page/signup.html">Sign Up</a>
-             </li>
-             <li>
-                <a href="../page/login.html">Log In</a>
-             </li>
 
-        </ul>
-    </nav>
-
-</header>
-
-    
-   <!-- JS Script -->
+    <!-- JS Script -->
     <!-- start hiren code -->
     <section id="movie-src">
         <div class="container">
@@ -167,88 +192,176 @@
         </div>
         <div id="container"></div>
         <div id="pagination"></div>
-    </div>
-    <script>
-        const searchBox = document.getElementById("searchBox");
-        const clearButton = document.getElementById("clearButton");
-        const container = document.getElementById("container");
-        const pagination = document.getElementById("pagination");
-        let timeoutID;
-        let currentPage = 1;
-        let totalPages = 1;
+        </div>
+        <script>
+            const searchBox = document.getElementById("searchBox");
+            const clearButton = document.getElementById("clearButton");
+            const container = document.getElementById("container");
+            const pagination = document.getElementById("pagination");
+            let timeoutID;
+            let currentPage = 1;
+            let totalPages = 1;
 
-        // Fetch initial movies on page load
-        window.onload = () => {
-            fetchMovies();
-        };
+            // Fetch initial movies on page load
+            window.onload = () => {
+                fetchMovies();
+            };
 
-        const fetchMovies = async (searchTerm = "", page = 1) => {
-            const URL = `https://www.omdbapi.com/?apikey=1e16119&s=${searchTerm || "movie"}&page=${page}`;
-            const res = await fetch(URL);
-            const data = await res.json();
-            if (data.Response === "True") {
-                totalPages = Math.ceil(data.totalResults / 20); // 20 cards per page
-                const movies = data.Search.slice(0, 20); // Display only the first 20 results
-                showData(movies); // Display the movie data
-                showPagination();
-            } else {
-                container.innerHTML = "<p>No results found</p>";
+            const fetchMovies = async (searchTerm = "", page = 1) => {
+                const URL = `https://www.omdbapi.com/?apikey=1e16119&s=${searchTerm || "movie"}&page=${page}`;
+                const res = await fetch(URL);
+                const data = await res.json();
+                if (data.Response === "True") {
+                    totalPages = Math.ceil(data.totalResults / 20); // 20 cards per page
+                    const movies = data.Search.slice(0, 20); // Display only the first 20 results
+                    showData(movies); // Display the movie data
+                    showPagination();
+                } else {
+                    container.innerHTML = "<p>No results found</p>";
+                    pagination.innerHTML = "";
+                }
+            };
+
+            const fetchMovieDetails = async (movieID) => {
+                const URL = `https://www.omdbapi.com/?apikey=1e16119&i=${movieID}`;
+                const res = await fetch(URL);
+                const data = await res.json();
+                return data;
+            };
+
+            const handleSearchInput = async () => {
+                currentPage = 1;
+                fetchMovies(searchBox.value, currentPage);
+            };
+
+            const showData = async (movies) => {
+                container.innerHTML = "";
+                for (const movie of movies) {
+                    const details = await fetchMovieDetails(movie.imdbID);
+
+                    const card = document.createElement("div");
+                    card.classList.add("card");
+
+                    const title = document.createElement("p");
+                    title.innerHTML = `<b>Title:</b> ${details.Title}`;
+
+                    const poster = document.createElement('img');
+                    poster.src = details.Poster !== "N/A" ? details.Poster : "https://via.placeholder.com/150";
+
+                    const runtime = document.createElement('p');
+                    runtime.innerHTML = `<b>Runtime:</b> ${details.Runtime}`;
+
+                    const genre = document.createElement('p');
+                    genre.innerHTML = `<b>Genre:</b> ${details.Genre}`;
+
+                    const rating = document.createElement('p');
+                    rating.innerHTML = `<b>Rating:</b> ${details.imdbRating}`;
+
+                    const language = document.createElement('p');
+                    language.innerHTML = `<b>Language:</b> ${details.Language}`;
+
+
+                    const bookButton = document.createElement('button');
+                    bookButton.innerText = "Book Ticket";
+                    bookButton.addEventListener('click', () => {
+                        alert(`Bill for ${details.Title}`);
+                        // Redirect to booking page with movie details as query parameters
+                        window.location.href = `../page/seat.html?movieID=${details.imdbID}&title=${encodeURIComponent(details.Title)}&poster=${encodeURIComponent(details.Poster)}&runtime=${encodeURIComponent(details.Runtime)}&genre=${encodeURIComponent(details.Genre)}&rating=${encodeURIComponent(details.imdbRating)}&language=${encodeURIComponent(details.Language)}`;
+
+
+                    });
+
+
+
+
+                    card.append(poster, title, runtime, genre, rating, language, bookButton);
+                    container.append(card);
+                }
+            };
+
+            const showPagination = () => {
                 pagination.innerHTML = "";
-            }
-        };
 
-        const fetchMovieDetails = async (movieID) => {
-            const URL = `https://www.omdbapi.com/?apikey=1e16119&i=${movieID}`;
-            const res = await fetch(URL);
-            const data = await res.json();
-            return data;
-        };
+                const prevButton = document.createElement("button");
+                prevButton.innerText = "Previous";
+                prevButton.disabled = currentPage === 1;
+                prevButton.addEventListener('click', () => {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        fetchMovies(searchBox.value, currentPage);
+                    }
+                });
 
-        const handleSearchInput = async () => {
-            currentPage = 1;
-            fetchMovies(searchBox.value, currentPage);
-        };
+                const nextButton = document.createElement("button");
+                nextButton.innerText = "Next";
+                nextButton.disabled = currentPage === totalPages;
+                nextButton.addEventListener('click', () => {
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        fetchMovies(searchBox.value, currentPage);
+                    }
+                });
 
-        const showData = async (movies) => {
-    container.innerHTML = "";
-    for (const movie of movies) {
-        const details = await fetchMovieDetails(movie.imdbID);
+                const fetchMovieDetails = async (movieID) => {
+                    const URL = `https://www.omdbapi.com/?apikey=1e16119&i=${movieID}`;
+                    const res = await fetch(URL);
+                    const data = await res.json();
+                    return data;
+                };
 
-        const card = document.createElement("div");
-        card.classList.add("card");
+                const handleSearchInput = async () => {
+                    currentPage = 1;
+                    fetchMovies(searchBox.value, currentPage);
+                };
 
-        const title = document.createElement("p");
-        title.innerHTML = `<b>Title:</b> ${details.Title}`;
+                const showData = async (movies) => {
+                    container.innerHTML = "";
+                    for (const movie of movies) {
+                        const details = await fetchMovieDetails(movie.imdbID);
 
-        const poster = document.createElement('img');
-        poster.src = details.Poster !== "N/A" ? details.Poster : "https://via.placeholder.com/150";
+                        const card = document.createElement("div");
+                        card.classList.add("card");
 
-        const runtime = document.createElement('p');
-        runtime.innerHTML = `<b>Runtime:</b> ${details.Runtime}`;
+                        const title = document.createElement("p");
+                        title.innerHTML = `<b>Title:</b> ${details.Title}`;
 
-        const genre = document.createElement('p');
-        genre.innerHTML = `<b>Genre:</b> ${details.Genre}`;
+                        const poster = document.createElement('img');
+                        poster.src = details.Poster !== "N/A" ? details.Poster : "https://via.placeholder.com/150";
 
-        const rating = document.createElement('p');
-        rating.innerHTML = `<b>Rating:</b> ${details.imdbRating}`;
+                        const runtime = document.createElement('p');
+                        runtime.innerHTML = `<b>Runtime:</b> ${details.Runtime}`;
 
-        const language = document.createElement('p');
-        language.innerHTML = `<b>Language:</b> ${details.Language}`;
+                        const genre = document.createElement('p');
+                        genre.innerHTML = `<b>Genre:</b> ${details.Genre}`;
 
+<<<<<<< HEAD
         const bookButton = document.createElement('button');
         bookButton.innerText = "Book Ticket";
         bookButton.addEventListener('click', () => {
             // Redirect to booking page with movie details as query parameters
             alert(`Bill for ${details.Title}`);
             window.location.href = `../page/seat.html?movieID=${details.imdbID}&title=${encodeURIComponent(details.Title)}&poster=${encodeURIComponent(details.Poster)}&runtime=${encodeURIComponent(details.Runtime)}&genre=${encodeURIComponent(details.Genre)}&rating=${encodeURIComponent(details.imdbRating)}&language=${encodeURIComponent(details.Language)}`;
+=======
+                        const rating = document.createElement('p');
+                        rating.innerHTML = `<b>Rating:</b> ${details.imdbRating}`;
+
+                        const language = document.createElement('p');
+                        language.innerHTML = `<b>Language:</b> ${details.Language}`;
+
+                        const bookButton = document.createElement('button');
+                        bookButton.innerText = "Book Ticket";
+                        bookButton.addEventListener('click', () => {
+                            // Redirect to booking page with movie details as query parameters
+                            window.location.href = `../page/seat.html?movieID=${details.imdbID}&title=${encodeURIComponent(details.Title)}&poster=${encodeURIComponent(details.Poster)}&runtime=${encodeURIComponent(details.Runtime)}&genre=${encodeURIComponent(details.Genre)}&rating=${encodeURIComponent(details.imdbRating)}&language=${encodeURIComponent(details.Language)}`;
+>>>>>>> f9172305f3a2ccc841f0cf2ea0eb488b8a6d6ea5
 
 
-        });
+                        });
 
-        card.append(poster, title, runtime, genre, rating, language, bookButton);
-        container.append(card);
-    }
-};
+                        card.append(poster, title, runtime, genre, rating, language, bookButton);
+                        container.append(card);
+                    }
+                };
                 const bookButton = document.createElement('button');
                 bookButton.innerText = "Book Ticket";
                 bookButton.addEventListener('click', () => {
@@ -257,55 +370,34 @@
                 });
 
 
-        const showPagination = () => {
-            pagination.innerHTML = "";
 
-            const prevButton = document.createElement("button");
-            prevButton.innerText = "Previous";
-            prevButton.disabled = currentPage === 1;
-            prevButton.addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    fetchMovies(searchBox.value, currentPage);
-                }
-            });
+                const pageInfo = document.createElement("span");
+                pageInfo.innerText = `Page ${currentPage} of ${totalPages}`;
 
-            const nextButton = document.createElement("button");
-            nextButton.innerText = "Next";
-            nextButton.disabled = currentPage === totalPages;
-            nextButton.addEventListener('click', () => {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    fetchMovies(searchBox.value, currentPage);
-                }
-            });
-
-            const pageInfo = document.createElement("span");
-            pageInfo.innerText = `Page ${currentPage} of ${totalPages}`;
-
-            pagination.append(prevButton, pageInfo, nextButton);
-        };
-
-        const debounce = (fn, delay) => {
-            return (...args) => {
-                if (timeoutID) {
-                    clearTimeout(timeoutID);
-                }
-                timeoutID = setTimeout(() => {
-                    fn(...args);
-                }, delay);
+                pagination.append(prevButton, pageInfo, nextButton);
             };
-        };
 
-        searchBox.addEventListener('input', debounce(handleSearchInput, 1000));
+            const debounce = (fn, delay) => {
+                return (...args) => {
+                    if (timeoutID) {
+                        clearTimeout(timeoutID);
+                    }
+                    timeoutID = setTimeout(() => {
+                        fn(...args);
+                    }, delay);
+                };
+            };
 
-        // Clear button functionality
-        clearButton.addEventListener('click', () => {
-            searchBox.value = ""; // Clear the input
-            currentPage = 1; // Reset to first page
-            fetchMovies(); // Fetch default movies
-        });
-    </script>
-    <script src="../public/index.js"></script>
+            searchBox.addEventListener('input', debounce(handleSearchInput, 1000));
+
+            // Clear button functionality
+            clearButton.addEventListener('click', () => {
+                searchBox.value = ""; // Clear the input
+                currentPage = 1; // Reset to first page
+                fetchMovies(); // Fetch default movies
+            });
+        </script>
+        <script src="../public/index.js"></script>
 </body>
+
 </html>

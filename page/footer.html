@@ -7,9 +7,10 @@
     <title>Movie Buff Footer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="icon" href="../assets/icon-movie.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Lato', sans-serif;
             margin: 0;
             padding: 0;
         }
@@ -22,7 +23,7 @@
             flex-direction: column;
             align-items: center;
             position: fixed;
-            bottom:0px;   
+            bottom: 0px;
         }
 
         .footer {
@@ -97,6 +98,7 @@
 
         .legal a {
             color: white;
+            text-decoration: none;
             margin: 2px 0;
         }
 
@@ -123,6 +125,7 @@
 
             .social-icons {
                 justify-content: center;
+                
             }
 
             .app-store img {
@@ -162,7 +165,11 @@
             .ending a {
                 display: block;
                 margin: 5px 0;
+                text-decoration: none;
             }
+        }
+        .social-icons a{
+          margin-right: 30px;
         }
     </style>
 </head>
@@ -181,22 +188,12 @@
             <div class="footer-section">
                 <h3>More</h3>
                 <a href="#">Streaming & Consumer Technology</a>
-                <a href="#">IMAX Enhanced</a>
+                <a href="#">MovieBuff Enhanced</a>
                 <a href="#">Exclusive Art</a>
                 <a href="#">Special Events</a>
                 <a href="#">Find A Theatre</a>
                 <a href="#">News</a>
                 <a href="#">Documentaries</a>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
-                    <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
-                    <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
-                    <a href="#" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
-                    <a href="#" class="fab fa-youtube" aria-label="YouTube"></a>
-                </div>
             </div>
             <div class="footer-section app-store">
                 <h3>Download Our App</h3>
@@ -204,17 +201,30 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <img src="../assets/moviebuff logo.jpg" alt="IMAX Logo">
+
+            <img src="../assets/icon-movie-removebg-preview.png" alt="MB Logo">
+            <!-- <img src="../assets/icon-movie.jpg" alt="Bf Logo"> -->
+
             <div class="legal">
                 <p>MovieBuff® is a registered trademark of Moviebuff Corporation. © 2023 MovieBuff Corporation. All rights
                     reserved.</p>
-                <p>TO THE MOVIEBUFF®, AT THE MOVIEBUFF®, MOVIES TO THE MOVIEBUFF®</p>
+                <p>TO THE MOVIEBUFF®, AT THE MOVIEBUFF®, MOVIES TO THE MOVIEBUFF®</p><br>
                 <div class="ending">
                     <a href="#">Terms Of Use</a> |
                     <a href="#">Privacy Policy</a> |
                     <a href="#">Cookies Policy</a> |
                     <a href="#">Privacy Settings</a> |
                     <a href="#">Do Not Sell or Share My Information</a>
+                </div>
+                <div>
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
+                        <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
+                        <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+                        <a href="#" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+                        <a href="#" class="fab fa-youtube" aria-label="YouTube"></a>
+                    </div>
                 </div>
             </div>
         </div>
