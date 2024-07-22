@@ -51,7 +51,7 @@ Keep track of your ticket count and total cost, and complete your booking with a
 ------------------------------------------------------------- PROJECT ------------------------------------------------------
 
 MOVIE BOOKING SYSTEM
-- **Link:** [MOVIE BOOKING SYSTEM] (deploy link paste)
+- **Link:** [MOVIE BOOKING SYSTEM](https://moviebuff-ticket-booking.netlify.app/)
 - **Directory Structure:**
 
   ## Directory Structure
