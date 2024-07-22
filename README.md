@@ -19,6 +19,7 @@ Keep track of your ticket count and total cost, and complete your booking with a
 
 
 ------------------------------------ PROJECT ------------------------------------------------------
+
 MOVIE BOOKING SYSTEM
 - **Link:** [MOVIE BOOKING SYSTEM] (deploy link paste)
 - **Directory Structure:**
