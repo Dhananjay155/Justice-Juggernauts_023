@@ -169,8 +169,11 @@ Some of the glimpses of our work
 ![assets/Screenshot 2024-07-22 121926.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121926.png)
 
 
-
-
+<h1>Technology Stack </h1> 
+<hr/>
+HTML,
+CSS,
+JAVASCRIPT
 
 Running the project
 <hr/>
