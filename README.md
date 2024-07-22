@@ -62,5 +62,23 @@ Justice-Juggernauts_023/
 │
 ├── db.json
 ├── package.json
-├── README.md```
+├── README.md  ```
+
+
+
+
+Some of the glimpses of our work
+
+photo...ss
+
+
+
+
+Running the project
+<hr/>
+<br/>
+
+### run json
+
+json-server --watch --port 4000 db.json 
 
