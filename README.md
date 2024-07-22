@@ -23,8 +23,9 @@ MOVIE BOOKING SYSTEM
 - **Link:** [MOVIE BOOKING SYSTEM] (deploy link paste)
 - **Directory Structure:**
 
-   <pre>
-  Justice-Juggernauts_023
+  ## Directory Structure
+```plaintext
+Justice-Juggernauts_023/
 │
 ├── assets
 │   ├── checking
@@ -61,9 +62,6 @@ MOVIE BOOKING SYSTEM
 ├── db.json
 ├── package.json
 ├── README.md
-
-</pre>
-
 
 Some of the glimpses of our work
 
