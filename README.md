@@ -75,9 +75,22 @@ Some of the glimpses of our work
 
 <h1>Landing Page </h1> 
 
+1. Movie browsing: Featured film "IT END" with synopsis and rating.
+2. User interactions: "REVIEWS" and "TRAILER" buttons for more content.
+3. Streaming capability: "WATCH MOVIE" button for direct viewing.
+4. Account management: "Sign Up" and "Log In" options at the top.
+5. Content discovery: Navigation menu and thumbnail carousel for other movies.
+
 ![assets/Screenshot 2024-07-22 121506.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121506.png)
 
+   
 <h1>SignUp Page </h1> 
+
+1. User registration: Sign-up form with fields for username, email, phone number, and password.
+2. Account access: Login option for existing users.
+3. Navigation: Menu bar with Home, Movie, Sign Up, and Log In options.
+4. Branding: "MovieBuff" logo visible in the top-left corner.
+5. Visual appeal: Film production-themed background with clapperboard, film reel, and camera tripod.
 
 ![assets/Screenshot 2024-07-22 121718.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121718.png)
 
