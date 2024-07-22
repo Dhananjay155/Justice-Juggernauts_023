@@ -1,16 +1,10 @@
 # Justice-Juggernauts_023
 
-# Cisco-Crusaders_092
-we are building an ecommerce website for selling Sports Gear and Cloths , https://www.decathlon.in/
-
-To see our Team members works - https://www.notion.so/Cisco-Crusaders_092-2bf1902ccea544d68add09732076d0ca?pvs=4
-
-
 ------------------------------------ INTRODUCTION -----------------------------------------------
 
-The project statement given to us was to clone the Decathlon website which deals in selling sports products.
-Our team was able to achieve as much as possible in the given time constraint with a few functionalities like product page light Mood dark mood, 
-adding products in cart along with display of total price for all the products with variation in quantity.
+Welcome to our Movie Ticket Booking System! Effortlessly browse movie details, including posters, runtime, genre, and ratings. 
+Select your preferred showtimes and choose seats dynamically displayed in real-time. 
+Keep track of your ticket count and total cost, and complete your booking with a seamless payment button.
 
 ------------------------------------ TEAM MEMBERS ------------------------------------------------
 
@@ -33,12 +27,7 @@ photo...ss
 Running the project
 <hr/>
 <br/>
-Clone the repository <br/>
-Find index.html file<br/>
-Copy the file path<br/>
-Paste in the browser<br/>
-Hit enter<br/>
-Now You can see the magic.<br/>
+
 ### run json
 
 json-server --watch --port 4000 db.json 
