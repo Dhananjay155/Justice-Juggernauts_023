@@ -330,6 +330,11 @@ body.dark-mode #theme-button {
 }
 
 @media (min-width: 768px) {
+    .main {
+        flex-direction: row;
+        
+    }
+
     .movie-details,
     .tickets {
         margin-right: 20px;
@@ -338,6 +343,27 @@ body.dark-mode #theme-button {
 
     .movie-details {
         max-width: 300px;
+    }
+
+    .tickets {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 767px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .movie-details,
+    .tickets {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .movie-details img {
+        width: 100%;
+        max-width: none;
     }
 }
 
