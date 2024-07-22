@@ -73,7 +73,34 @@ Justice-Juggernauts_023/
 
 Some of the glimpses of our work
 
-photo...ss
+<h1>Landing Page </h1> 
+
+![assets/Screenshot 2024-07-22 121506.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121506.png)
+
+<h1>Landing Page </h1> 
+
+![assets/Screenshot 2024-07-22 121718.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121718.png)
+
+<h1>Landing Page </h1> 
+
+![assets/Screenshot 2024-07-22 121741.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121741.png)
+
+<h1>Landing Page </h1> 
+
+![assets/Screenshot 2024-07-22 121807.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121807.png)
+
+<h1>Landing Page </h1> 
+
+![assets/Screenshot 2024-07-22 121831.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121831.png)
+
+<h1>Landing Page </h1> 
+
+![assets/Screenshot 2024-07-22 121848.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121848.png)
+
+<h1>Landing Page </h1> 
+
+![assets/Screenshot 2024-07-22 121926.png](https://github.com/Dhananjay155/Justice-Juggernauts_023/blob/develop/assets/Screenshot%202024-07-22%20121926.png)
+
 
 
 
